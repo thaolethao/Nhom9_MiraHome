@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap);
 *{
     margin:0;
@@ -67,6 +68,9 @@ body{
     font-size: 15px;
     margin: -15px 0 15px;
 }
+.remember-forgot label input{
+    accent-color: white;
+}
 .remember-forgot a{
     color: white;
     text-decoration: none;
@@ -75,7 +79,7 @@ body{
     text-decoration: underline;
 }
 
-.login{
+.button{
     width: 100%;
     height: 45px;
     background: white;
@@ -85,6 +89,7 @@ body{
     font-size: 15px;
     cursor: pointer;
     font-weight: 600;
+    color:black;
 }
 
 .register {
@@ -98,3 +103,4 @@ body{
 .register a:hover{
     text-decoration: underline;
 }
+
