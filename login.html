@@ -119,34 +119,58 @@
             <!-- end bottom-header -->
         </div>
         <!-- end header  -->
-        <div id="wp-content" >
+        <div id="wp-content">
             <div class="container py-4">
                 <nav aria-label="breadcrumb" class="breadcrumbs">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                      <li class="breadcrumb-item"><a href="#">Đăng nhập</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="#">Đăng nhập</a></li>
                     </ol>
-                  </nav>
-               <div class="content wp-login">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="box lastest-blog">
-                            <div class="box-head text-left">
-                                <h2 class="font-weight-bold" style="color: #343434;">ĐĂNG NHẬP TÀI KHOẢN</h2>
-                                <p style="color: #8d8d8d;">Bạn chưa có tài khoản? Vui lòng đăng ký <a href="register.html">tại đây</a></p>
-                                <form action="your-login-endpoint" method="POST">
-                                    <div class="form-group">
-                                        <label for="">Email:</label>
-                                        <input type="email" class="form-control w-100" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Mật khẩu:</label>
-                                        <input type="password" class="form-control w-100" name="password" required>
-                                    </div>
-                                    <button type="submit" class="btn w-100">Đăng nhập</button>
-                                </form>
+                </nav>
+                <div class="content wp-login">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="box lastest-blog">
+                                <div class="box-head text-left">
+                                    <h2 class="font-weight-bold" style="color: #343434;">ĐĂNG NHẬP TÀI KHOẢN</h2>
+                                    <p style="color: #8d8d8d;">Bạn chưa có tài khoản? Vui lòng đăng ký <a href="register.html">tại đây</a></p>
+                                    <!-- Form đăng nhập -->
+                                    <form id="loginForm">
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="form-control w-100" id="email" name="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Mật khẩu:</label>
+                                            <input type="password" class="form-control w-100" id="password" name="password" required>
+                                        </div>
+                                        <button type="button" class="btn w-100" onclick="handleLogin()">Đăng nhập</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function handleLogin() {
+                // Lấy giá trị từ các trường input
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+        
+                // Kiểm tra nếu các trường đã được điền
+                if (email === "" || password === "") {
+                    alert("Vui lòng điền đầy đủ thông tin.");
+                } else {
+                    alert(`Đăng nhập thành công! `);
+                    // Có thể chuyển hướng sau khi đăng nhập thành công
+                     window.location.href = "index.html";
+                }
+            }
+        </script>
+        
                         <!-- end lastest-blog -->
                     </div>
                 </div>

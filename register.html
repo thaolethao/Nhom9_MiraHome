@@ -119,42 +119,68 @@
             <!-- end bottom-header -->
         </div>
         <!-- end header  -->
-        <div id="wp-content" >
+        <div id="wp-content">
             <div class="container py-4">
                 <nav aria-label="breadcrumb" class="breadcrumbs">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
-                      <li class="breadcrumb-item"><a href="#">Đăng ký</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="#">Đăng ký</a></li>
                     </ol>
-                  </nav>
-                  <div class="container wp-login">
+                </nav>
+                <div class="container wp-login">
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="box lastest-blog">
                                 <div class="box-head text-left">
                                     <h2 class="font-weight-bold" style="color: #343434;">ĐĂNG KÝ TÀI KHOẢN</h2>
-                                    <p style="color: #8d8d8d;">Bạn đã có tài khoản ? Vui lòng đăng nhập <a href="login.html">tại đây</a></p>
-                                    <form action="your-login-endpoint" method="POST">
+                                    <p style="color: #8d8d8d;">Bạn đã có tài khoản? Vui lòng đăng nhập <a href="login.html">tại đây</a></p>
+                                    <!-- Form đăng ký -->
+                                    <form id="registerForm">
                                         <div class="form-group">
                                             <label for="fullname">Họ và Tên:</label>
                                             <input type="text" class="form-control w-100" name="fullname" id="fullname" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="phone">Số điện thoại:</label>
-                                            <input type="phone" class="form-control w-100" name="phone" id="phone" required>
+                                            <input type="text" class="form-control w-100" name="phone" id="phone" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="email">Email:</label>
-                                            <input type="email" class="form-control w-100" name="emai" id="email" required>
+                                            <input type="email" class="form-control w-100" name="email" id="email" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="password">Mật Khẩu:</label>
                                             <input type="password" class="form-control w-100" name="password" id="password" required>
                                         </div>
-                                        <button type="submit" class="btn w-100">Đăng Ký</button>
+                                        <button type="button" class="btn w-100" onclick="handleRegister()">Đăng Ký</button>
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function handleRegister() {
+                // Lấy giá trị từ các trường input
+                const fullname = document.getElementById("fullname").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
+        
+                // Kiểm tra nếu các trường đã được điền
+                if (fullname === "" || phone === "" || email === "" || password === "") {
+                    alert("Vui lòng điền đầy đủ thông tin.");
+                } else {
+                    alert(`Đăng ký thành công! Chào mừng ${fullname}.`);
+                    // Có thể chuyển hướng đến trang đăng nhập sau khi đăng ký thành công
+                     window.location.href = "login.html";
+                }
+            }
+        </script>
+        
                             <!-- end lastest-blog -->
                         </div>
                     </div>
