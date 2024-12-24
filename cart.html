@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+  
+     <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/assets/owl.theme.default.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/grid-responsive.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <title>Shop đồ gia dụng</title>
+</head>
+<style>
+    .quantity-control {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-control button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 16px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .quantity-control input {
+            width: 50px;
+            height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin: 0 5px;
+        }
+
+        .container h2.title {
+            font-size: 18px
+        }
+
+        .container h3.card-title {
+            font-size: 16px;
+            padding: 10px 2px 10px 2px;
+            border-bottom: 1px solid #326e51;
+            font-weight: 600
+        }
+
+        .container .num {
+            color: #706f6f
+        }
+
+        .container a.name {
+            color: #000
+        }
+
+        .container a.name:hover {
+            color: #326e51
+        }
+
+        .btn {
+            background: #326e51 !important;
+            cursor: pointer !important;
+            color: #fff !important;
+        }
+        .btn.btn-order{
+            background: #dda165 !important;
+            color: #fff !important;
+            font-weight: bold;
+            border: none;
+        }
+        .btn.btn-order:focus{
+            outline: none !important;
+        }
+        .container .space-provisional,
+        .container .space-discount,
+        .container .space-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0px;
+        }
+
+        .container .space-discount {
+            border-bottom: 1px solid #326e51;
+            margin-bottom: 10px
+        }
+
+        .container .space-total {
+            margin-bottom: 15px;
+        }
+
+        .container .space-total .text-total {
+            color: #ff6600;
+        }
+
+        .space-price {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px 0px 10px 0px;
+        }
+
+        #total-price {
+            text-transform: lowercase;
+            margin-top: 0px
+        }
+        .card-body {
+         padding: 1rem !important;
+        }
+</style>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="top-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-12 text-md-left text-center mb-3 mb-md-0"><i class="fa-regular fa-clock"></i>&nbsp;Thứ 2 - thứ 7: 8:00am -
+                            20:00am</div>
+                        <div class="col-md-4 col-12 text-md-center text-center mb-3  mb-md-0"><i
+                                class="fa-regular fa-envelope"></i>&nbsp;yumishop@gmail.com</div>
+                        <div class="col-md-4 col-12  text-md-right text-center  mb-md-0"><i class="fa-solid fa-phone"></i>&nbsp;0862700821</div>
+                    </div>
+                </div>
+            </div>
+            <!-- end top-header -->
+            <div id="bottom-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <nav class="d-flex justify-content-between align-items-center" id="home-nav">
+                                <a href="index.html" class="navbar-brand">
+                                    <img src="images/Larana.png" alt="logo">
+                                </a>
+                                <ul id="main-menu" class=" list-unstyled  mb-0 ">
+                                    <li class="menu-item"><a href="index.html">TRANG CHỦ</a></li>
+                                    <li class="menu-item"><a href="introduce.html">GIỚI THIỆU</a></li>
+                                    <li class="menu-item has-child"><a href="product.html">SẢN PHẨM</a>
+                                        <ul class="sub-menu shadow">
+                                            <li><a href="category-product.html">Dụng cụ nấu ăn</a></li>
+                                            <li><a href="category-product.html">Dụng cụ bàn ăn</a></li>
+                                            <li><a href="category-product.html">Thiết bị gia dụng</a></li>
+                                            <li><a href="category-product.html">Phụ kiện bếp</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a href="contact.html">LIÊN HỆ</a></li>
+                                </ul>
+                                <div class="wp-search-cart">
+                                    <form action="">
+                                        <input type="text" class="search-form"  placeholder="Tìm kiếm....">
+                                        <button class="search"> <i class=" fa-solid fa-magnifying-glass"></i></button>
+                                    </form>
+                                    <div class="user">
+                                        <!-- <i class="fa-solid fa-user"></i> -->
+                                        <div class="wp-login-register">
+                                            <a href="login.html">Đăng Nhập</a>
+                                            <span class="space">/</span>
+                                            <a href="register.html">Đăng Ký</a>
+                                        </div>
+                                    </div>
+                                    <a href="cart.html" class="cart">
+                                        <i class=" fa-solid fa-cart-plus"></i>
+                                        <span class="num-product-cart">0</span>
+                                    </a>
+                                </div>
+                                <div class="wp-responsive-cart-search-navbar_toggle ">
+                                    <div class="wp-responsive-cart-search  align-items-center d-flex">
+                                        <a href="cart.html" class="cart">
+                                            <i class=" fa-solid fa-cart-plus"></i>
+                                            <span class="num-product-cart">0</span>
+                                        </a>
+                                        <form action="#">
+                                            <input type="text" class="search-form-responsive display-none"  placeholder="Tìm kiếm....">
+                                             <i class="search-responsive fa-solid fa-magnifying-glass"></i>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="navbar-toggle">
+                                        <i class="bar fa-sharp fa-solid fa-bars"></i>
+                                    </div>
+                                </div>
+                                
+                               
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="wp-responsive">
+                    <ul id="menu-responsive" class=" list-unstyled  mb-0 ">
+                        <div class="wp-login-register responsive">
+                            <a href="login.html">Đăng Nhập</a>
+                            <span class="space">/</span>
+                            <a href="register.html">Đăng Ký</a>
+                        </div>
+                        <li class="menu-item"><a href="index.html">TRANG CHỦ</a></li>
+                        <li class="menu-item"><a href="introduce.html">GIỚI THIỆU</a></li>
+                        <li class="menu-item"><a href="product.html">SẢN PHẨM</a>
+                            <i class="responsive-menu-toggle fa-solid fa-angle-down"></i>
+                            <ul class="sub-menu shadow">
+                                <li><a href="category-product.html">Dụng cụ nấu ăn</a></li>
+                                <li><a href="category-product.html">Dụng cụ bàn ăn</a></li>
+                                <li><a href="category-product.html">Thiết bị gia dụng</a></li>
+                                <li><a href="category-product.html">Phụ kiện bếp</a></li>
+                            </ul>
+                        </li>
+                        </li>
+                        <li class="menu-item"><a href="contact.html">LIÊN HỆ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end bottom-header -->
+        </div>
+        <!-- end header  -->
+        <div id="wp-content">
+            <div id="content">
+               <div class="wp-nav">
+                <nav aria-label="breadcrumb" id="breadcrumb-nav" class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Trang
+                                chủ</a></li>
+                        <li class="breadcrumb-item"><span>Giỏ hàng</span></li>
+                    </ol>
+                </nav>
+               </div>
+                <div class="container wp-cart mb-5 mt-3">
+                    <h2 class="text-left px-2 py-3 title">Giỏ hàng <span class="num">(2 sản
+                        phẩm)</span> </h2>
+                    <div class="row">
+                        <div class="col-lg-8">
+                                <div class="card mb-4">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-md-2 col-sm-4 col-4">
+                                            <img src="images/anhchitietsanpham1.webp" class="card-img product-img"
+                                                alt="Product Image">
+                                        </div>
+                                        <div class="col-md-10 col-sm-8 col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><a href=""
+                                                        class="name"> Giá Để Thớt Chất Liệu Thép Cao Cấp</a></h5>
+                                                <div class="space-price">
+                                                    <span class="mr-3">Giá tiền:
+                                                        <strong class="font-weight color-price-red">306.000đ</strong></span>
+                                                    <span class="">Thành tiền: <strong
+                                                            id="" class="font-weight color-price-red">406.000đ</strong></span>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="quantity-control"
+                                                        data-url="">
+                                                        <button class="btn-decrease">-</button>
+                                                        <input type="number" class="form-control form-control-sm qty"
+                                                            value="1" min="1"
+                                                            data-id="">
+                                                        <button class="btn-increase">+</button>
+                                                    </div>
+                                                    <a href=""
+                                                        class="btn btn-success delete  ml-2 btn-sm">Xóa</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card mb-4">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-md-2 col-sm-4 col-4">
+                                            <img src="images/anhchitietsanpham2.webp" class="card-img product-img"
+                                                alt="Product Image">
+                                        </div>
+                                        <div class="col-md-10 col-sm-8 col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><a href=""
+                                                        class="name"> Giá Để Thớt Chất Liệu Thép Cao Cấp</a></h5>
+                                                <div class="space-price">
+                                                    <span class="mr-3">Giá tiền:
+                                                        <strong class="font-weight color-price-red">306.000đ</strong></span>
+                                                    <span class="">Thành tiền: <strong
+                                                            id="" class="font-weight color-price-red">406.000đ</strong></span>
+                                                </div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="quantity-control"
+                                                        data-url="">
+                                                        <button class="btn-decrease">-</button>
+                                                        <input type="number" class="form-control form-control-sm qty"
+                                                            value="1" min="1"
+                                                            data-id="">
+                                                        <button class="btn-increase">+</button>
+                                                    </div>
+                                                    <a href=""
+                                                        class="btn btn-success delete ml-2 btn-sm">Xóa</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+        
+                            <!-- Repeat for more products -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Hóa đơn của bạn</h3>
+                                    <div class="space-provisional">
+                                        Tạm tính: <strong
+                                            class="card-text font-weight" id="total-provisional">200.000đ</strong>
+                                    </div>
+                                    <div class="space-discount">
+                                        Giảm giá: <strong class="card-text font-weight">-0đ</strong>
+                                    </div>
+                                    <div class="space-total">
+                                        Tổng cộng: <strong class="card-text text-total"
+                                            id="total-price">200.000đ</strong>
+                                    </div>
+                                    <a href="checkout.html" class="btn btn-block btn-order">Tiến hành đặt hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                   
+                        <!-- <p class="text-left px-2 py-3 title ">Bạn chưa chọn sản phẩm nào <a href="trang-chu.html" class="btn btn-sm">Tiếp
+                                tục mua sắm</a></p> -->
+               
+            </div>
+                    
+                </div>
+               
+
+                </div>
+                <!-- end content  -->
+            </div>
+            <!-- end wp-content  -->
+            <div id="footer" class="text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <!-- begin box-address  -->
+                            <div class="box box-address">
+                               <div class="box-head">
+                                   <h6>ĐỊA CHỈ</h6>
+                               </div>
+                               <div class="box-body">
+                                   <ul id="list-address" class="p-0 m-0 list-unstyled">
+                                       <li class="list-item ">
+                                      <a href="#" class="text-decoration-none text-light d-block py-1"> <i class="fa-solid fa-location-dot "></i>&nbsp;KTX Khu B ĐHQG TPHCM </a>
+                                       </li>
+                                       <li class="list-item  py-1">
+                                         <div class="phone"> <i class="fa-solid fa-phone"></i>&nbsp;0862700821</div>
+                                       </li>
+                                       <li class="list-item" >
+                                           <a href="" class="phone py-1 d-block text text-decoration-none text-light"><i class="fa-regular fa-envelope"></i>&nbsp;support@dinhnhan.vn</a>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                           <!-- end box-address  -->
+                        </div>
+                        <!-- end col  -->
+                        <div class="col-md-3">
+                            <!-- begin box-introduce  -->
+                            <div class="box box-introduce">
+                               <div class="box-head">
+                                   <h6>GIỚI THIỆU</h6>
+                               </div>
+                               <div class="box-body">
+                                   <ul id="list-introduce" class="p-0 m-0 list-unstyled">
+                                       <li class="list-item ">
+                                        <a href="" class="text-decoration-none text-light d-block py-1">Về chúng tôi</a>
+                                       </li>
+                                       <li class="list-item  py-1">
+                                          <a href=""  class="text-decoration-none text-light d-block py-1">Cách đặt hàng</a>
+                                       </li>
+                                       <li class="list-item  py-1" >
+                                          <a href=""  class="text-decoration-none text-light d-block py-1">Kiểm tra đơn hàng</a>
+                                       </li>
+                                       <li class="list-item  py-1" >
+                                        <a href=""  class="text-decoration-none text-light d-block py-1">Hỗ trợ</a>
+                                     </li>
+                                   </ul>
+                               </div>
+                           </div>
+                              <!-- end box-introduce  -->
+                        </div>
+                        <!-- end col  -->
+                        <div class="col-md-3">
+                            <!-- begin box-category  -->
+                            <div class="box box-category">
+                               <div class="box-head">
+                                   <h6>DANH MỤC</h6>
+                               </div>
+                               <div class="box-body">
+                                   <ul id="list-category" class="p-0 m-0 list-unstyled">
+                                       <li class="list-item  ">
+                                        <a href=""  class="text-decoration-none text-light d-block py-1">Dụng cụ nấu ăn</a>
+                                       </li>
+                                       <li class="list-item ">
+                                          <a href=""  class="text-decoration-none text-light d-block py-1">Dụng cụ bàn ăn</a>
+                                       </li>
+                                       <li class="list-item " >
+                                          <a href="" class="text-decoration-none text-light d-block py-1">Thiết bị gia dụng</a>
+                                       </li>
+                                       <li class="list-item " >
+                                        <a href=""  class="text-decoration-none text-light d-block py-1">Phụ kiện bếp</a>
+                                     </li>
+                                   </ul>
+                               </div>
+                           </div>
+                              <!-- end box-category -->
+                        </div>
+                        <!-- end col  -->
+                        <div class="col-md-3">
+                            <!-- begin box-social  -->
+                            <div class="box box-social">
+                               <div class="box-head">
+                                   <h6>SOCIAL</h6>
+                               </div>
+                               <div class="box-body">
+                                   <ul id="list-social" class="p-0 m-0 list-unstyled">
+                                       <li class="list-item ">
+                                          <a href="" class="text-decoration-none text-light d-block py-1"><i class="fa-brands fa-facebook"></i>&nbsp;Facebook</a>
+                                       </li>
+                                       <li class="list-item " >
+                                        <a href="" class="text-decoration-none text-light d-block py-1"><i class="fa-brands fa-youtube"></i>&nbsp;Youtube</a>
+                                     </li>
+                                       <li class="list-item " >
+                                          <a href="" class="text-decoration-none text-light d-block py-1"><i class="fa-brands fa-twitter"></i>&nbsp;Twitter</a>
+                                       </li>
+                                      
+                                   </ul>
+                               </div>
+                           </div>
+                              <!-- end box-social  -->
+                        </div>
+                        <!-- end col  -->
+                    </div>
+                    <!-- end row -->
+                </div>
+                <!-- end container  -->
+               
+            </div>
+            <!-- end footer -->
+            <div id="copyright">
+                <p class="text-copyright text-center text-light"><i class="fa-regular fa-copyright"></i> 2024 BẢN QUYỀN THUỘC VỀ YUMI SHOP</p>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        
+        <script src="js/jquery.com_jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.js@1.14.7_dist_umd_popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+       
+        <script src="owlcarousel/jquery.min.js"></script>
+        <script src="owlcarousel/owl.carousel.min.js"></script>
+        <script src="js/app.js"></script>
+       
+</body>
+
+</html>

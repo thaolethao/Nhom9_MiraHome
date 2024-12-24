@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+#promotionModal.modal {
+  display: none; /* Ẩn modal mặc định */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#promotionModal .modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  text-align: center;
+  height: 300px;
+  background-image: url('./images/anhphongnen2.webp');
+}
+
+#promotionModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#promotionModal .countdown span {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 26px;
+  color: #21c37a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#promotionModal .modal-content p{
+    font-size: 20px;
+}
+#promotionModal .modal-content h3{
+    color: red;
+    font-size: 22px;
+}
+#promotionModal .modal-content .buy-now{
+    background-color: #21c37a;
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+</style>
+    <body>
+        <div id="promotionModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Nhanh tay! Nhận ngay khuyến mãi</h3>
+                <div class="countdown">
+                    <span><strong>08</strong> NGÀY</span>
+                    <span><strong>05</strong> GIỜ</span>
+                    <span><strong>21</strong> PHÚT</span>
+                    <span><strong>40</strong> GIÂY</span>
+                </div>
+                <p>NHẬP MÃ <strong style="color: rgb(255, 9, 95);">"YUMI"</strong> NHẬN NGAY FREESHIP</p>
+                <p>Miễn phí vận chuyển cho mọi đơn hàng</p>
+                <button onclick="shopNow()" class="buy-now">Mua ngay</button>
+            </div>
+        </div>
+    </body>
+    <script>
+    const countdown = () => {
+    // Xác định thời điểm đích mà bạn muốn đếm ngược. Ở đây, thời điểm đích là 23:59:59 ngày 31/12/2024.
+      const endTime = new Date("2024-12-31T23:59:59").getTime();
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+  
+        if (distance < 0) {
+          clearInterval(timer);
+          document.querySelector(".countdown").innerHTML = "Hết hạn khuyến mãi!";
+          return;
+        }
+        /*
+        TÍNH SỐ NGÀY
+        1000 * 60 * 60 * 24: Số mili giây trong một ngày.
+
+        1000 mili giây = 1 giây.
+        1000 * 60 = 1 phút.
+        1000 * 60 * 60 = 1 giờ.
+        1000 * 60 * 60 * 24 = 1 ngày.
+        distance / (1000 * 60 * 60 * 24): Tính số ngày còn lại bằng cách chia tổng thời gian còn lại (distance) cho số mili giây trong một ngày.
+        Math.floor: Lấy phần nguyên (bỏ đi phần thập phân).
+        Ví dụ:
+        distance = 90061000 (tổng thời gian còn lại).
+        Số mili giây trong 1 ngày: 86400000.
+        90061000 / 86400000 = 1.042 (khoảng 1 ngày).
+        Math.floor(1.042) = 1 (chỉ tính phần nguyên là 1 ngày).
+        
+        TÍNH SỐ GIỜ CÒN LẠI
+        distance % (1000 * 60 * 60 * 24):
+
+        Lấy phần dư của distance khi chia cho số mili giây trong một ngày.
+        Phần dư này là phần còn lại sau khi trừ đi số ngày.
+        / (1000 * 60 * 60):
+        Chia số mili giây còn lại cho số mili giây trong một giờ để tính số giờ.
+        Math.floor: Lấy phần nguyên (bỏ đi phần thập phân).
+        Ví dụ:
+        distance = 90061000.
+        distance % 86400000 = 3661000 (phần còn lại sau khi tính 1 ngày).
+        Số mili giây trong 1 giờ: 3600000.
+        3661000 / 3600000 = 1.0169 (khoảng 1 giờ).
+        Math.floor(1.0169) = 1 (lấy phần nguyên là 1 giờ).
+
+        TÍNH SỐ PHÚT CÒN LẠI
+        distance % (1000 * 60 * 60):
+        Lấy phần dư của distance khi chia cho số mili giây trong một giờ.
+        Phần dư này là phần còn lại sau khi trừ đi số giờ.
+        / (1000 * 60):
+        Chia số mili giây còn lại cho số mili giây trong một phút để tính số phút.
+        Math.floor: Lấy phần nguyên.
+        Ví dụ:
+        distance = 90061000.
+        distance % 3600000 = 61000 (phần còn lại sau khi tính 1 giờ).
+        Số mili giây trong 1 phút: 60000.
+        61000 / 60000 = 1.016 (khoảng 1 phút).
+        Math.floor(1.016) = 1 (lấy phần nguyên là 1 phút).
+
+        TÍNH SỐ GIÂY
+        distance % (1000 * 60):
+        Lấy phần dư của distance khi chia cho số mili giây trong một phút.
+        Phần dư này là phần còn lại sau khi trừ đi số phút.
+        / 1000:
+        Chia số mili giây còn lại cho 1000 để tính số giây.
+        Math.floor: Lấy phần nguyên.
+        Ví dụ:
+        distance = 90061000.
+        distance % 60000 = 1000 (phần còn lại sau khi tính 1 phút).
+        1000 / 1000 = 1 (tương ứng 1 giây).
+        */
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+        document.querySelector(".countdown").innerHTML = `
+          <span><strong>${days}</strong> NGÀY</span>
+          <span><strong>${hours}</strong> GIỜ</span>
+          <span><strong>${minutes}</strong> PHÚT</span>
+          <span><strong>${seconds}</strong> GIÂY</span>
+        `;
+      }, 1000);
+    };
+
+    // Đóng modal
+    function closeModal() {
+    document.getElementById('promotionModal').style.display = 'none';
+    sessionStorage.setItem('modalShown', 'true'); // Lưu trạng thái modal đã được hiển thị
+}
+
+// Chuyển hướng đến trang mua hàng
+    function shopNow() {
+    window.location.href = '/link-mua-hang'; // Thay bằng link mua hàng của bạn
+        }
+
+// Gọi hàm đếm ngược khi tải trang
+    window.onload = function () {
+    // Kiểm tra trạng thái modal trong sessionStorage
+    const modalShown = sessionStorage.getItem('modalShown');
+
+    if (!modalShown) {
+    // Nếu modal chưa được hiển thị, hiển thị modal và bắt đầu đếm ngược
+    document.getElementById('promotionModal').style.display = 'block';
+    countdown();
+  }
+};
+</script>
+</html>
