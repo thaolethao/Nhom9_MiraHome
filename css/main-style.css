@@ -933,6 +933,3 @@ border: 2px solid #60452E; /* Viền xanh cho hình thumbnail đang active */
 h2.checkout{
     font-size: 1.8rem;
 }
-.breadcrumb-item a {
-    color: brown;
-}
