@@ -11,6 +11,11 @@ class ApiController extends Controller
     public function getProducts()
     {
         $products = DB::table('products')->get();
+
+        foreach ($products as $product) {
+            $product->image_url = asset($product->image);
+        }
+
         return response()->json($products);
     }
 
@@ -23,9 +28,10 @@ class ApiController extends Controller
             return response()->json(['message' => 'Product not found'], 404);
         }
 
+        $product->image_url = asset($product->image);
+
         return response()->json($product);
     }
-
     // Thêm sản phẩm mới
     public function createProduct(Request $request)
     {
