@@ -1,38 +1,39 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
 
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Hiển thị form đăng ký.
+     *
+     * @return \Illuminate\View\View
      */
-    public function create(): View
+    public function create()
     {
-        return view('auth.register');
+        return view('mirahome.register');
     }
 
     /**
-     * Handle an incoming registration request.
+     * Xử lý đăng ký.
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|confirmed|min:8',
         ]);
 
         $user = User::create([
@@ -45,6 +46,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect()->route('home'); // Hoặc trang bạn muốn chuyển hướng sau khi đăng ký thành công
     }
 }
