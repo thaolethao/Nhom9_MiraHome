@@ -75,37 +75,83 @@
         <!-- END BOTTOM HEADER -->
     </header>
 
-    <!-- CONTENT -->
-    <main id="wp-content">
-        <div id="content">
-
-            <!-- SLIDER -->
-            <div id="home-slide" class="carousel slide carousel-fade" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-interval="2000">
-                        <a href="#"><img src="{{ asset('mirahome/img/slider_1.webp') }}" alt="Slide 1" class="d-block w-100"></a>
-                    </div>
-                    <div class="carousel-item" data-interval="2000">
-                        <a href="#"><img src="{{ asset('mirahome/img/slider_2.webp') }}" alt="Slide 2" class="d-block w-100"></a>
+    <div id="wp-content" >
+            <div class="container py-4">
+                <nav aria-label="breadcrumb" class="breadcrumbs">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="{{ url('/') }}">Trang chủ</a></li>
+                      <li class="breadcrumb-item">Thanh toán</li>
+                    </ol>
+                  </nav>
+                  <div class="container mt-5">
+                    <h2 class="text-center mb-4 checkout"> Thông Tin Thanh Toán</h2>
+                    <div class="row">
+                        <!-- Thông tin khách hàng -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Thông Tin Khách Hàng</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="fullName" class="form-label">Họ và tên</label>
+                                            <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Nhập email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">Số điện thoại</label>
+                                            <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">Địa chỉ nhận hàng</label>
+                                            <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ giao hàng" required>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Thông tin thanh toán -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title ">Phương Thức Thanh Toán</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form action="{{ url('confirm-momo') }}" method="POST">
+                                        @csrf {{-- Bảo mật CSRF --}}
+                                        
+                                        <label>
+                                            <input type="radio" name="payment_method" value="wallet" checked>
+                                            <img src="{{ asset('mirahome/img/MoMo_Logo.png') }}" alt="Momo" style="width:20px; height:auto; vertical-align:middle; margin-right:5px;">
+                                            Ví điện tử Momo
+                                        </label>
+                                    
+                                        <div class="mb-3 mt-2">
+                                            <label for="totalAmount" class="form-label">Tổng tiền</label>
+                                            {{-- <input type="text" class="form-control" id="totalAmount" value="{{ number_format($total, 0, ',', '.') }} VND" readonly> --}}
+                                            {{-- <input type="hidden" name="total" value="{{ $total }}"> --}}
+                                            <input type="text" class="form-control" id="totalAmount" value="10,000 VND" readonly>
+                                            <input type="hidden" name="total" value="10000">
+                                        </div>
+                                    
+                                        <button type="submit" name="payUrl" class="btn btn-block" style="background-color: #dda165; color: #fff;">
+                                            Thanh Toán
+                                        </button>
+                                    </form>                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <ol class="carousel-indicators">
-                    <li data-target="#home-slide" data-slide-to="0" class="active"></li>
-                    <li data-target="#home-slide" data-slide-to="1"></li>
-                </ol>
             </div>
-            <!-- END SLIDER -->
-
-            <!-- SALE PRODUCTS -->
-            <section class="container py-5" id="selling-product">
-                <div class="text-center mb-5">
-                    <h2 class="font-weight-bold">SẢN PHẨM</h2>
-                </div>
-            </section>
-            <!-- END SALE PRODUCTS -->
-
+           
         </div>
-    </main>
+            <!-- end wp-content  -->
 
      <!-- footer -->
      <div id="footer" class="text-light">
@@ -157,6 +203,7 @@
                             </div>
                         </div>
                         <!-- end box-introduce -->
+                         
                     </div>
                     <div class="col-md-3">
                         <!-- begin box-category -->
