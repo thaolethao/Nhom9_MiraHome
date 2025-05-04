@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/home'); // Hoặc trang mà bạn muốn chuyển hướng người dùng sau khi đăng nhập thành công
+            return redirect()->intended('/'); // Hoặc trang mà bạn muốn chuyển hướng người dùng sau khi đăng nhập thành công
         }
 
         return back()->withErrors([

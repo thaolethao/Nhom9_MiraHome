@@ -1043,3 +1043,30 @@ a.btn.btn-success.delete:hover {
 .card-body {
  padding: 1rem !important;
 }
+
+.btn-primary {
+    background-color: #eb953f ;
+    border: none;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #f78b1f !important;
+}
+
+.btn-danger {
+    background-color: #eb953f ;
+    border: none;
+}
+.btn-danger:hover {
+    background-color: #f78b1f  !important;
+}
+
+.btn-block {
+    background-color: #eb953f ;
+    color: #fff;
+}
+.btn-block:hover {
+    background-color: #f78b1f  !important;
+    color: #fff;
+}

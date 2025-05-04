@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
+use App\Models\CartItem;
+
 
 class PaymentController extends Controller
 {
@@ -92,18 +97,37 @@ class PaymentController extends Controller
         return view('mirahome.checkout', compact('total'));
     }
 
-    public function momoReturn(Request $request)
+    public function momoReturn(Request $request) 
     {
-        return view('mirahome.momo_return', [
-            'message' => $request->query('message'),
-            'orderId' => $request->query('orderId'),
-            'amount' => $request->query('amount'),
+        $message = $request->query('message');
+        $orderId = $request->query('orderId');
+        $amount = $request->query('amount');
+        $resultCode = $request->query('resultCode');
+    
+        // Tính lại số lượng sản phẩm trong giỏ nếu người dùng còn đăng nhập
+        $cartItemCount = 0;
+        if (Auth::check()) {
+            $cart = Cart::where('user_id', Auth::id())->first();
+            if ($cart) {
+                $cartItemCount = CartItem::where('cart_id', $cart->id)->count();
+            }
+        }
+    
+        // Nếu thanh toán thành công (resultCode == 0), mày có thể xử lý logic xoá giỏ hàng
+        if ($resultCode == 0) {
+            // Thanh toán thành công, xử lý xoá giỏ hoặc đặt hàng...
+            if ($cart) {
+                $cart->items()->delete(); // hoặc $cart->delete() tùy logic
+                $cartItemCount = 0;
+            }
+        }
+    
+        return view('mirahome.index', [
+            'message' => $message,
+            'orderId' => $orderId,
+            'amount' => $amount,
+            'cartItemCount' => $cartItemCount,
         ]);
     }
-
-    public function momoNotify(Request $request)
-    {
-        // Có thể ghi log, lưu trạng thái đơn hàng tại đây
-        return response()->json(['message' => 'IPN received'], 200);
-    }
+    
 }

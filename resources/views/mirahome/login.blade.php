@@ -101,7 +101,8 @@
                                     <p style="color: #8d8d8d;">Bạn chưa có tài khoản? Vui lòng đăng ký <a
                                             href="{{ route('register') }}">tại đây</a></p>
                                     <!-- Form đăng nhập -->
-                                    <form id="loginForm">
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf                                    
                                         <div class="form-group">
                                             <label for="email">Email:</label>
                                             <input type="email" class="form-control w-100" id="email" name="email"
@@ -112,8 +113,7 @@
                                             <input type="password" class="form-control w-100" id="password"
                                                 name="password" required>
                                         </div>
-                                        <button type="button" class="btn w-100" onclick="handleLogin()">Đăng
-                                            nhập</button>
+                                        <button type="submit" class="btn w-100">Đăng nhập</button>
                                     </form>
                                 </div>
                             </div>

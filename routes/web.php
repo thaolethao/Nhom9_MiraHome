@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Cart;
+use App\Models\CartItem;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
@@ -7,7 +10,16 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 // Route cho trang chủ
 Route::get('/', function () {
-    return view('mirahome.index');
+    $cartItemCount = 0;
+
+    if (Auth::check()) {
+        $cart = Cart::where('user_id', Auth::id())->first();
+        if ($cart) {
+            $cartItemCount = CartItem::where('cart_id', $cart->id)->count();
+        }
+    }
+
+    return view('mirahome.index', compact('cartItemCount'));
 });
 
 // Route cho giỏ hàng

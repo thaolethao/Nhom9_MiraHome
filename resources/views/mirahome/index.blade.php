@@ -74,7 +74,7 @@
                         </div>
                         <a href="{{ url('/cart') }}" class="cart ml-3 position-relative">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <span class="num-product-cart badge badge-danger">0</span>
+                            <span class="num-product-cart badge badge-danger">{{ $cartItemCount }}</span>
                         </a>
                     </div>
                 </nav>
