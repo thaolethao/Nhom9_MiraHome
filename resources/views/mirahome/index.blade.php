@@ -24,7 +24,7 @@
     <!-- HEADER -->
     <header id="header">
         <!-- TOP HEADER -->
-        <div id="top-header" class="py-2 bg-light">
+        <div id="top-header" class="py-2 bg-brown">
             <div class="container">
                 <div class="row text-center text-md-left">
                     <div class="col-md-4 mb-2 mb-md-0">
@@ -67,9 +67,17 @@
                             <input type="text" class="form-control" placeholder="Tìm kiếm...">
                             <button class="btn btn-outline-secondary"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
-                        <a href="#" class="cart ml-3 position-relative">
+                        <div class="user">
+                            <!-- <i class="fa-solid fa-user"></i> -->
+                            <div class="wp-login-register">
+                                <a href="{{ route('login') }}">Đăng Nhập</a>
+                                <span class="space">/</span>
+                                <a href="{{ route('register') }}">Đăng Ký</a>
+                            </div>
+                        </div>
+                        <a href="{{ url('/cart') }}" class="cart ml-3 position-relative">
                             <i class="fa-solid fa-cart-plus"></i>
-                            <span class="num-product-cart badge badge-danger">2</span>
+                            <span class="num-product-cart badge badge-danger">{{ $cartItemCount }}</span>
                         </a>
                     </div>
                 </nav>
@@ -293,10 +301,10 @@
                                         <a href="#" class="text-decoration-none text-light d-block py-1">Đăng nhập</a>
                                     </li>
                                     <li class="list-item py-1">
-                                        <a href="#" class="text-decoration-none text-light d-block py-1">Đăng kí</a>
+                                        <a href="{{ route('register') }}" class="text-decoration-none text-light d-block py-1">Đăng kí</a>
                                     </li>
                                     <li class="list-item py-1">
-                                        <a href="#" class="text-decoration-none text-light d-block py-1">Giỏ hàng</a>
+                                        <a href="{{ route('login') }}" class="text-decoration-none text-light d-block py-1">Giỏ hàng</a>
                                     </li>
                                 </ul>
                             </div>
