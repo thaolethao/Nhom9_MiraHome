@@ -21,7 +21,7 @@
     <!-- HEADER -->
     <header id="header">
         <!-- TOP HEADER -->
-        <div id="top-header" class="py-2 bg-light">
+        <div id="top-header" class="py-2 bg-brown">
             <div class="container">
                 <div class="row text-center text-md-left">
                     <div class="col-md-4 mb-2 mb-md-0">
