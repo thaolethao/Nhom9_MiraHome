@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class ApiController extends Controller
 {
     // Lấy danh sách sản phẩm
-    public function getProducts()
+/*    public function getProducts()
     {
         $products = DB::table('products')->get();
 
@@ -18,6 +18,14 @@ class ApiController extends Controller
 
         return response()->json($products);
     }
+*/
+public function getProducts(Request $request)
+{
+    $perPage = $request->input('per_page', 8); // Mặc định mỗi trang 8 sản phẩm
+    $products = DB::table('products')->paginate($perPage);
+    return response()->json($products);
+}
+
 
     // Lấy chi tiết sản phẩm theo id
     public function getProduct($id)

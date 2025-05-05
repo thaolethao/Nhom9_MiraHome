@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -59,3 +60,40 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+<h1>Thiết kế web - Nhóm 9</h1>
+<em>Lớp học phần: 241IS19A01 - [THIẾT KẾ WEB - THỨ 7 CA 2]</em>
+
+<h2>Tên chủ đề: Thiết kế trang web bán dụng cụ nhà bếp</h2>
+
+<h3>Danh sách thành viên</h3>
+
+<table>
+  <tr>
+    <th> Họ và tên </th>
+    <th>MSV</th>
+  </tr>
+  <tr>
+    <td>Trần Ngọc Mai</td>
+    <td>25A4041870</td>
+  </tr>
+  <tr>
+    <td>Lê Thị Thảo</td>
+    <td>25A4042229</td>
+  </tr>
+  <tr>
+    <td>Nguyễn Thị Thắm</td>
+    <td>25A4042235</td>
+  </tr>
+  <tr>
+    <td>Hoàng Thu Uyên</td>
+    <td>25A4042250</td>
+  </tr>
+</table>
+
+<h3><em>Link tham khảo:</em></h3>
+
+https://chefstore.vn/
+
+https://www.hartsofstur.com/
+>>>>>>> fd63a29d0f9fab694473e991551c40cd59993ade
