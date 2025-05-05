@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ asset('mirahome/css/main-style.css') }}">
     <link rel="stylesheet" href="{{ asset('mirahome/css/grid-responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('mirahome/css/fontawesome/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('mirahome/css/sanpham.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
@@ -105,12 +108,154 @@
             <!-- END SLIDER -->
 
             <!-- SALE PRODUCTS -->
-            <section class="container py-5" id="selling-product">
-                <div class="text-center mb-5">
-                    <h2 class="font-weight-bold">SẢN PHẨM</h2>
+                <!-- Phần hiển thị sản phẩm -->
+    <section class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="font-weight-bold">SẢN PHẨM</h2>
+        </div>
+        
+        <!-- Khu vực hiển thị sản phẩm -->
+        <div id="product-list" class="row">
+            <!-- Loading indicator -->
+            <div class="col-12 text-center my-5" id="loading-indicator">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
-            </section>
-            <!-- END SALE PRODUCTS -->
+                <p class="mt-2">Đang tải sản phẩm...</p>
+            </div>
+        </div>
+    </section>
+<!-- JavaScript -->
+<script>
+    let currentPage = 1;
+
+    function formatPrice(price) {
+        return new Intl.NumberFormat('vi-VN', { 
+            style: 'currency', 
+            currency: 'VND' 
+        }).format(price);
+    }
+
+    function loadProducts(page = 1) {
+        $.ajax({
+            url: '/api/products?page=' + page,
+            method: 'GET',
+            beforeSend: function () {
+                $('#loading-indicator').show();
+            },
+            success: function (response) {
+                let html = '';
+                let products = response.data;
+
+                if (products.length > 0) {
+                    products.forEach(function (product) {
+                        html += `
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="product-card">
+                                <img src="${product.image}" 
+                                     class="product-img" 
+                                     alt="${product.name}"
+                                     onerror="this.src='{{ asset('mirahome/img/default-product.jpg') }}'">
+                                <div class="p-3">
+                                    <h5 class="mb-2">${product.name}</h5>
+                                    <div class="price-section">
+                                        <span class="current-price">${formatPrice(product.price)}</span>
+                                        ${product.old_price ? `<span class="old-price">${formatPrice(product.old_price)}</span>` : ''}
+                                    </div>
+                                    <span class="badge badge-success stock-badge">Còn ${product.stock} sản phẩm</span>
+                                    <div class="mt-3">
+                                        <button class="btn btn-sm btn-primary add-to-cart" data-id="${product.id}">
+                                            <i class="fas fa-cart-plus"></i> Thêm giỏ hàng
+                                        </button>
+                                        <a href="/products/${product.id}" class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-eye"></i> Xem chi tiết
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                    });
+
+                    // Thêm phân trang
+                    html += '<div class="col-12 mt-4 d-flex justify-content-center">';
+                    html += '<nav><ul class="pagination">';
+
+                    if (response.current_page > 1) {
+                        html += `<li class="page-item"><a class="page-link" href="#" data-page="${response.current_page - 1}">Trước</a></li>`;
+                    }
+
+                    for (let i = 1; i <= response.last_page; i++) {
+                        html += `<li class="page-item ${i === response.current_page ? 'active' : ''}">
+                                    <a class="page-link" href="#" data-page="${i}">${i}</a>
+                                 </li>`;
+                    }
+
+                    if (response.current_page < response.last_page) {
+                        html += `<li class="page-item"><a class="page-link" href="#" data-page="${response.current_page + 1}">Sau</a></li>`;
+                    }
+
+                    html += '</ul></nav></div>';
+                } else {
+                    html = '<div class="col-12 text-center"><p>Không có sản phẩm nào</p></div>';
+                }
+
+                $('#product-list').html(html);
+            },
+            error: function (xhr, status, error) {
+                console.error('Lỗi khi tải sản phẩm:', error);
+                $('#product-list').html(`
+                    <div class="col-12 text-center error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>Đã xảy ra lỗi khi tải sản phẩm. Vui lòng thử lại sau.</p>
+                        <button class="btn btn-sm btn-outline-primary retry-btn">
+                            <i class="fas fa-sync-alt"></i> Thử lại
+                        </button>
+                    </div>
+                `);
+            },
+            complete: function () {
+                $('#loading-indicator').hide();
+            }
+        });
+    }
+
+    // Khi document ready
+    $(document).ready(function () {
+        loadProducts(currentPage); // Gọi trang đầu
+
+        // Phân trang
+        $(document).on('click', '.page-link', function (e) {
+            e.preventDefault();
+            const page = $(this).data('page');
+            if (page && page !== currentPage) {
+                currentPage = page;
+                loadProducts(currentPage);
+            }
+        });
+
+        // Nút thử lại khi lỗi
+        $(document).on('click', '.retry-btn', function () {
+            loadProducts(currentPage);
+        });
+
+        /// cập nhật danh sách theo thời gian thực
+     // Cập nhật sản phẩm định kỳ mỗi 30 giây
+     setInterval(function () {
+        loadProducts(currentPage);
+    }, 30000); // 30000 ms = 30 giây
+
+        // Demo thêm giỏ hàng
+        $(document).on('click', '.add-to-cart', function () {
+            const productId = $(this).data('id');
+            alert('Đã thêm sản phẩm ID ' + productId + ' vào giỏ hàng');
+            // Có thể thêm AJAX xử lý ở đây nếu cần
+        });
+    });
+
+    
+</script>
+
+           <!-- END SALE PRODUCTS -->
 
         </div>
     </main>
