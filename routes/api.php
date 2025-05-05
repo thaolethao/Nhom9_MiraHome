@@ -21,3 +21,10 @@ Route::middleware('auth:api')->group(function () {
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('profile', [AuthController::class, 'profile']);
 });
+
+use App\Http\Controllers\CartController1;
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::get('/cart', [CartController1::class, 'index']);
+    Route::post('/cart/add', [CartController1::class, 'addItem']);
+});
