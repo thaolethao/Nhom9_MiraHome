@@ -1,0 +1,16 @@
+# Thư mục build
+bin/
+obj/
+
+# VS config
+.vs/
+*.suo
+*.user
+
+# Tệp thực thi
+*.exe
+*.dll
+
+# Khác
+*.log
+*.cache

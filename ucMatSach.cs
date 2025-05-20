@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace BTL_Nhom9
+{
+    public partial class ucMatSach : UserControl
+    {
+        public ucMatSach()
+        {
+            InitializeComponent();
+        }
+
+        private void ucMatSach_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
