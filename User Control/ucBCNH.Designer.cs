@@ -63,6 +63,7 @@
             this.label1.Size = new System.Drawing.Size(301, 82);
             this.label1.TabIndex = 7;
             this.label1.Text = "Báo Cáo Nhập Hàng\r\n\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // l
             // 

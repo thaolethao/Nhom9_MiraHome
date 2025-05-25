@@ -56,94 +56,94 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucBCBH.cs">
+    <Compile Include="User Control\ucBCBH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBCBH.Designer.cs">
+    <Compile Include="User Control\ucBCBH.Designer.cs">
       <DependentUpon>ucBCBH.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucBCKQHDKD.cs">
+    <Compile Include="User Control\ucBCKQHDKD.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBCKQHDKD.Designer.cs">
+    <Compile Include="User Control\ucBCKQHDKD.Designer.cs">
       <DependentUpon>ucBCKQHDKD.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucBCNH.cs">
+    <Compile Include="User Control\ucBCNH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBCNH.Designer.cs">
+    <Compile Include="User Control\ucBCNH.Designer.cs">
       <DependentUpon>ucBCNH.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucBCSP.cs">
+    <Compile Include="User Control\ucBCSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBCSP.Designer.cs">
+    <Compile Include="User Control\ucBCSP.Designer.cs">
       <DependentUpon>ucBCSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucCongViec.cs">
+    <Compile Include="User Control\ucCongViec.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucCongViec.Designer.cs">
+    <Compile Include="User Control\ucCongViec.Designer.cs">
       <DependentUpon>ucCongViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucHDB.cs">
+    <Compile Include="User Control\ucHDB.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHDB.Designer.cs">
+    <Compile Include="User Control\ucHDB.Designer.cs">
       <DependentUpon>ucHDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucHDN.cs">
+    <Compile Include="User Control\ucHDN.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHDN.Designer.cs">
+    <Compile Include="User Control\ucHDN.Designer.cs">
       <DependentUpon>ucHDN.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucKhachHang.cs">
+    <Compile Include="User Control\ucKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucKhachHang.Designer.cs">
+    <Compile Include="User Control\ucKhachHang.Designer.cs">
       <DependentUpon>ucKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucLoaiSach.cs">
+    <Compile Include="User Control\ucLoaiSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucLoaiSach.Designer.cs">
+    <Compile Include="User Control\ucLoaiSach.Designer.cs">
       <DependentUpon>ucLoaiSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucMatSach.cs">
+    <Compile Include="User Control\ucMatSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucMatSach.Designer.cs">
+    <Compile Include="User Control\ucMatSach.Designer.cs">
       <DependentUpon>ucMatSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNCC.cs">
+    <Compile Include="User Control\ucNCC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNCC.Designer.cs">
+    <Compile Include="User Control\ucNCC.Designer.cs">
       <DependentUpon>ucNCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien.cs">
+    <Compile Include="User Control\ucNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien.Designer.cs">
+    <Compile Include="User Control\ucNhanVien.Designer.cs">
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNXB.cs">
+    <Compile Include="User Control\ucNXB.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNXB.Designer.cs">
+    <Compile Include="User Control\ucNXB.Designer.cs">
       <DependentUpon>ucNXB.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucSach.cs">
+    <Compile Include="User Control\ucSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucSach.Designer.cs">
+    <Compile Include="User Control\ucSach.Designer.cs">
       <DependentUpon>ucSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucTacGia.cs">
+    <Compile Include="User Control\ucTacGia.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucTacGia.Designer.cs">
+    <Compile Include="User Control\ucTacGia.Designer.cs">
       <DependentUpon>ucTacGia.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmTrangChu.resx">
@@ -159,49 +159,49 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucBCBH.resx">
+    <EmbeddedResource Include="User Control\ucBCBH.resx">
       <DependentUpon>ucBCBH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBCKQHDKD.resx">
+    <EmbeddedResource Include="User Control\ucBCKQHDKD.resx">
       <DependentUpon>ucBCKQHDKD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBCNH.resx">
+    <EmbeddedResource Include="User Control\ucBCNH.resx">
       <DependentUpon>ucBCNH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBCSP.resx">
+    <EmbeddedResource Include="User Control\ucBCSP.resx">
       <DependentUpon>ucBCSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucCongViec.resx">
+    <EmbeddedResource Include="User Control\ucCongViec.resx">
       <DependentUpon>ucCongViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHDB.resx">
+    <EmbeddedResource Include="User Control\ucHDB.resx">
       <DependentUpon>ucHDB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHDN.resx">
+    <EmbeddedResource Include="User Control\ucHDN.resx">
       <DependentUpon>ucHDN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucKhachHang.resx">
+    <EmbeddedResource Include="User Control\ucKhachHang.resx">
       <DependentUpon>ucKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucLoaiSach.resx">
+    <EmbeddedResource Include="User Control\ucLoaiSach.resx">
       <DependentUpon>ucLoaiSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucMatSach.resx">
+    <EmbeddedResource Include="User Control\ucMatSach.resx">
       <DependentUpon>ucMatSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNCC.resx">
+    <EmbeddedResource Include="User Control\ucNCC.resx">
       <DependentUpon>ucNCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien.resx">
+    <EmbeddedResource Include="User Control\ucNhanVien.resx">
       <DependentUpon>ucNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNXB.resx">
+    <EmbeddedResource Include="User Control\ucNXB.resx">
       <DependentUpon>ucNXB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucSach.resx">
+    <EmbeddedResource Include="User Control\ucSach.resx">
       <DependentUpon>ucSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucTacGia.resx">
+    <EmbeddedResource Include="User Control\ucTacGia.resx">
       <DependentUpon>ucTacGia.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
