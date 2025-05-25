@@ -28,28 +28,22 @@ namespace BTL_Nhom9
         private void LoadDataGridView()
         {
             DAO.connect();
-            string sql = "SELECT * FROM tblLoaiSach";
-            SqlDataAdapter da = new SqlDataAdapter(sql, DAO.conn);
-            tblLoaiSach = new DataTable();
-            da.Fill(tblLoaiSach);
+            string query = "select * from tblLoaiSach";
+            tblLoaiSach = DAO.GetDataToTable(query);
             dgvLoaiSach.DataSource = tblLoaiSach;
+            dgvLoaiSach.Columns[0].HeaderText = "Mã loại sách";
+            dgvLoaiSach.Columns[1].HeaderText = "Tên loại sách";
+            dgvLoaiSach.AllowUserToAddRows = false;
+            dgvLoaiSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLoaiSach.EditMode = DataGridViewEditMode.EditProgrammatically;
             DAO.close();
-        }
-
-
-        private void dgvLoaiSach_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvLoaiSach.Rows.Count)
-            {
-                txtMaLoaiSach.Text = dgvLoaiSach.CurrentRow.Cells[0].Value.ToString();
-                txtTenLoaiSach.Text = dgvLoaiSach.CurrentRow.Cells[1].Value.ToString();
-            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             isThem = true;
-            txtMaLoaiSach.Text = DAO.CreateKeyWithNumber("LS");
+            List<string> existingCodes = DAO.GetAllCodes("tblLoaiSach","MaLoai"); // Lấy danh sách mã hiện có
+            txtMaLoaiSach.Text = DAO.CreateKeyWithNumber("LS", existingCodes);
             txtTenLoaiSach.Clear();
             txtTenLoaiSach.Focus();
 
@@ -135,7 +129,6 @@ namespace BTL_Nhom9
         private void btnHuy_Click(object sender, EventArgs e)
         {
             ResetValues();
-            btnLuu.Enabled = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -147,6 +140,23 @@ namespace BTL_Nhom9
         {
             txtMaLoaiSach.Clear();
             txtTenLoaiSach.Clear();
+        }
+
+        private void dgvLoaiSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (tblLoaiSach.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            txtMaLoaiSach.Text = dgvLoaiSach.CurrentRow.Cells["maloai"].Value.ToString();
+            txtTenLoaiSach.Text = dgvLoaiSach.CurrentRow.Cells["tenloai"].Value.ToString();
+            txtMaLoaiSach.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnHuy.Enabled = true;
         }
     }
 }

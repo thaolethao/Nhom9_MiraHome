@@ -104,6 +104,7 @@
             this.dgvLoaiSach.RowTemplate.Height = 24;
             this.dgvLoaiSach.Size = new System.Drawing.Size(673, 165);
             this.dgvLoaiSach.TabIndex = 7;
+            this.dgvLoaiSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiSach_CellContentClick);
             // 
             // btnThem
             // 
