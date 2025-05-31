@@ -14,7 +14,7 @@ namespace BTL_Nhom9
     public partial class ucLoaiSach : UserControl
     {
         DataTable tblLoaiSach;
-        bool isThem = false;
+       
         public ucLoaiSach()
         {
             InitializeComponent();
@@ -41,10 +41,15 @@ namespace BTL_Nhom9
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            isThem = true;
-            List<string> existingCodes = DAO.GetAllCodes("tblLoaiSach","MaLoai"); // Lấy danh sách mã hiện có
-            txtMaLoaiSach.Text = DAO.CreateKeyWithNumber("LS", existingCodes);
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnHuy.Enabled = true;
+            btnThem.Enabled = false;
+            btnLuu.Enabled = true;
+            string maMoi= DAO.SinhMaTuDong("LS", "tblLoaiSach","MaLoai");
+            txtMaLoaiSach.Text = maMoi;
             txtTenLoaiSach.Clear();
+            txtMaLoaiSach.Enabled = false; // Không cho sửa mã
             txtTenLoaiSach.Focus();
 
             btnLuu.Enabled = true;
@@ -58,36 +63,16 @@ namespace BTL_Nhom9
                 txtTenLoaiSach.Focus();
                 return;
             }
-
-            if (isThem)
-            {
                 string sqlCheck = $"SELECT MaLoai FROM tblLoaiSach WHERE MaLoai = '{txtMaLoaiSach.Text}'";
                 DAO.connect();
-                if (DAO.checkKey(sqlCheck))
-                {
-                    MessageBox.Show("Mã loại sách đã tồn tại!");
-                    DAO.close();
-                    return;
-                }
-
                 string sqlInsert = $"INSERT INTO tblLoaiSach (MaLoai, TenLoai) VALUES ('{txtMaLoaiSach.Text}', N'{txtTenLoaiSach.Text}')";
                 SqlCommand cmd = new SqlCommand(sqlInsert, DAO.conn);
                 cmd.ExecuteNonQuery();
                 DAO.close();
                 MessageBox.Show("Đã thêm mới");
-            }
-            else
-            {
-                string sqlUpdate = $"UPDATE tblLoaiSach SET TenLoai = N'{txtTenLoaiSach.Text}' WHERE MaLoai = '{txtMaLoaiSach.Text}'";
-                DAO.connect();
-                SqlCommand cmd = new SqlCommand(sqlUpdate, DAO.conn);
-                cmd.ExecuteNonQuery();
-                DAO.close();
-                MessageBox.Show("Đã cập nhật");
-            }
-
+           
             LoadDataGridView();
-            ResetValues();
+            Clear();
             btnLuu.Enabled = false;
         }
 
@@ -99,8 +84,24 @@ namespace BTL_Nhom9
                 return;
             }
 
-            isThem = false;
-            btnLuu.Enabled = true;
+            if (txtTenLoaiSach.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn phải nhập tên loại sách!");
+                txtTenLoaiSach.Focus();
+                return;
+            }
+
+            // Disable luôn không cho sửa mã loại sách
+            txtMaLoaiSach.ReadOnly = true;
+
+            string sql = $"UPDATE tblLoaiSach SET TenLoai = N'{txtTenLoaiSach.Text}' WHERE MaLoai = '{txtMaLoaiSach.Text}'";
+            DAO.connect();
+            SqlCommand cmd = new SqlCommand(sql, DAO.conn);
+            cmd.ExecuteNonQuery();
+            DAO.close();
+            MessageBox.Show("Đã cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadDataGridView();
+            Clear();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -121,14 +122,19 @@ namespace BTL_Nhom9
                 DAO.close();
 
                 LoadDataGridView();
-                ResetValues();
+                Clear();
                 MessageBox.Show("Đã xóa");
             }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            ResetValues();
+            Clear();
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -136,7 +142,7 @@ namespace BTL_Nhom9
             this.Dispose();
         }
 
-        private void ResetValues()
+        private void Clear()
         {
             txtMaLoaiSach.Clear();
             txtTenLoaiSach.Clear();

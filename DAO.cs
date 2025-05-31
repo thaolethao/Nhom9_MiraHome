@@ -75,11 +75,13 @@ namespace BTL_Nhom9
 
         public static string GetFieldValues(string sql)
         {
+            DAO.connect();
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             string value = "";
             if (reader.Read()) value = reader.GetValue(0).ToString();
             reader.Close();
+            DAO.close();
             return value;
         }
 
@@ -89,38 +91,17 @@ namespace BTL_Nhom9
             return $"{parts[1]}/{parts[0]}/{parts[2]}";
         }
 
-        public static List<string> GetAllCodes(string tableName, string columnName)
+        public static string SinhMaTuDong(string tienTo, string table, string maCot)
         {
-            List<string> codes = new List<string>();
-            string query = $"SELECT {columnName} FROM {tableName}";
+            string sql = $"SELECT TOP 1 {maCot} FROM {table} WHERE {maCot} LIKE N'{tienTo}%' ORDER BY {maCot} DESC";
+            string maMax = GetFieldValues(sql);
 
-            using (SqlConnection conn = new SqlConnection(sqlConnectionString))
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    codes.Add(reader[columnName].ToString());
-                }
-            }
-            return codes;
-        }
-        public static string CreateKeyWithNumber(string prefix, List<string> existingKeys)
-        {
-            // Lọc ra những mã bắt đầu bằng prefix
-            var filtered = existingKeys
-                .Where(k => k.StartsWith(prefix))
-                .Select(k => k.Substring(prefix.Length))   // Lấy phần số phía sau prefix
-                .Where(s => int.TryParse(s, out _))        // Kiểm tra phần số hợp lệ
-                .Select(s => int.Parse(s));
+            if (string.IsNullOrEmpty(maMax))
+                return tienTo + "01";
 
-            int maxNumber = filtered.Any() ? filtered.Max() : 0; // Lấy số lớn nhất hiện có
-
-            int newNumber = maxNumber + 1;
-
-            // Trả về mã mới với số được format 2 chữ số
-            return prefix + newNumber.ToString("D2");
+            string so = maMax.Substring(tienTo.Length); // Tách phần số
+            int soMoi = int.Parse(so) + 1;
+            return tienTo + soMoi.ToString("D2"); // Luôn 3 chữ số: 001, 045, 123
         }
 
         public static bool ktSoNguyen(string input)
