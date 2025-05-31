@@ -50,10 +50,10 @@
             this.btnLoaiSach = new System.Windows.Forms.Button();
             this.btnSach = new System.Windows.Forms.Button();
             this.btnDanhMuc = new System.Windows.Forms.Button();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tlpnlMain = new System.Windows.Forms.TableLayoutPanel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.tlpnlBaoCao.SuspendLayout();
             this.tlpnlHoaDon.SuspendLayout();
@@ -406,6 +406,18 @@
             this.btnDanhMuc.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnDanhMuc.UseVisualStyleBackColor = false;
             // 
+            // picLogo
+            // 
+            this.picLogo.BackColor = System.Drawing.Color.White;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picLogo.Image = global::BTL_Nhom9.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(221, 61);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
+            // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.LightCyan;
@@ -431,11 +443,12 @@
             // 
             // tlpnlMain
             // 
+            this.tlpnlMain.AutoScroll = true;
+            this.tlpnlMain.AutoSize = true;
             this.tlpnlMain.ColumnCount = 3;
             this.tlpnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpnlMain.Location = new System.Drawing.Point(221, 61);
             this.tlpnlMain.Name = "tlpnlMain";
             this.tlpnlMain.RowCount = 3;
@@ -445,22 +458,11 @@
             this.tlpnlMain.Size = new System.Drawing.Size(889, 695);
             this.tlpnlMain.TabIndex = 3;
             // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.White;
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picLogo.Image = global::BTL_Nhom9.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(221, 61);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
-            // 
             // frmTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1110, 756);
             this.Controls.Add(this.tlpnlMain);

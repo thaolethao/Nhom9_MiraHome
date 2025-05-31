@@ -35,19 +35,19 @@
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDTBH = new System.Windows.Forms.TextBox();
-            this.txtGTDT = new System.Windows.Forms.TextBox();
-            this.txtDTT = new System.Windows.Forms.TextBox();
-            this.txtCPNH = new System.Windows.Forms.TextBox();
-            this.txtLNTT = new System.Windows.Forms.TextBox();
-            this.txtThue = new System.Windows.Forms.TextBox();
             this.txtLNST = new System.Windows.Forms.TextBox();
+            this.txtThue = new System.Windows.Forms.TextBox();
+            this.txtLNTT = new System.Windows.Forms.TextBox();
+            this.txtCPNH = new System.Windows.Forms.TextBox();
+            this.txtDTT = new System.Windows.Forms.TextBox();
+            this.txtGTDT = new System.Windows.Forms.TextBox();
+            this.txtDTBH = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnLapBC = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -58,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Chocolate;
-            this.label1.Location = new System.Drawing.Point(250, 0);
+            this.label1.Location = new System.Drawing.Point(249, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(594, 123);
             this.label1.TabIndex = 8;
@@ -136,60 +136,68 @@
             this.panel1.Size = new System.Drawing.Size(910, 392);
             this.panel1.TabIndex = 14;
             // 
-            // label4
+            // txtLNST
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(15, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(323, 84);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "2. Các khoản giảm trừ doanh thu\r\n\r\n\r\n";
+            this.txtLNST.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtLNST.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtLNST.Location = new System.Drawing.Point(424, 348);
+            this.txtLNST.Name = "txtLNST";
+            this.txtLNST.Size = new System.Drawing.Size(263, 30);
+            this.txtLNST.TabIndex = 26;
             // 
-            // label5
+            // txtThue
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Chocolate;
-            this.label5.Location = new System.Drawing.Point(15, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(318, 84);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "3. Doanh thu thuần về bán hàng\r\n\r\n\r\n";
+            this.txtThue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtThue.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtThue.Location = new System.Drawing.Point(424, 293);
+            this.txtThue.Name = "txtThue";
+            this.txtThue.Size = new System.Drawing.Size(263, 30);
+            this.txtThue.TabIndex = 25;
             // 
-            // label6
+            // txtLNTT
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Chocolate;
-            this.label6.Location = new System.Drawing.Point(15, 180);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(213, 84);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "4. Chi phí nhập hàng \r\n\r\n\r\n";
+            this.txtLNTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtLNTT.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtLNTT.Location = new System.Drawing.Point(424, 234);
+            this.txtLNTT.Name = "txtLNTT";
+            this.txtLNTT.Size = new System.Drawing.Size(263, 30);
+            this.txtLNTT.TabIndex = 24;
             // 
-            // label7
+            // txtCPNH
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(15, 238);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(242, 112);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "5. Lợi nhuận trước thuế \r\n\r\n\r\n\r\n";
+            this.txtCPNH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtCPNH.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtCPNH.Location = new System.Drawing.Point(424, 177);
+            this.txtCPNH.Name = "txtCPNH";
+            this.txtCPNH.Size = new System.Drawing.Size(263, 30);
+            this.txtCPNH.TabIndex = 23;
             // 
-            // label8
+            // txtDTT
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Chocolate;
-            this.label8.Location = new System.Drawing.Point(15, 295);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(200, 28);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "6. Thuế GTGT (20%)\r\n";
+            this.txtDTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDTT.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtDTT.Location = new System.Drawing.Point(424, 125);
+            this.txtDTT.Name = "txtDTT";
+            this.txtDTT.Size = new System.Drawing.Size(263, 30);
+            this.txtDTT.TabIndex = 22;
+            // 
+            // txtGTDT
+            // 
+            this.txtGTDT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtGTDT.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtGTDT.Location = new System.Drawing.Point(424, 73);
+            this.txtGTDT.Name = "txtGTDT";
+            this.txtGTDT.Size = new System.Drawing.Size(263, 30);
+            this.txtGTDT.TabIndex = 21;
+            // 
+            // txtDTBH
+            // 
+            this.txtDTBH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDTBH.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtDTBH.Location = new System.Drawing.Point(424, 18);
+            this.txtDTBH.Name = "txtDTBH";
+            this.txtDTBH.Size = new System.Drawing.Size(263, 30);
+            this.txtDTBH.TabIndex = 20;
             // 
             // label9
             // 
@@ -202,68 +210,60 @@
             this.label9.TabIndex = 19;
             this.label9.Text = "7. Lợi nhuận sau thuế ";
             // 
-            // txtDTBH
+            // label8
             // 
-            this.txtDTBH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtDTBH.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtDTBH.Location = new System.Drawing.Point(424, 18);
-            this.txtDTBH.Name = "txtDTBH";
-            this.txtDTBH.Size = new System.Drawing.Size(263, 30);
-            this.txtDTBH.TabIndex = 20;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Chocolate;
+            this.label8.Location = new System.Drawing.Point(15, 295);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(200, 28);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "6. Thuế GTGT (20%)\r\n";
             // 
-            // txtGTDT
+            // label7
             // 
-            this.txtGTDT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtGTDT.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtGTDT.Location = new System.Drawing.Point(424, 73);
-            this.txtGTDT.Name = "txtGTDT";
-            this.txtGTDT.Size = new System.Drawing.Size(263, 30);
-            this.txtGTDT.TabIndex = 21;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Chocolate;
+            this.label7.Location = new System.Drawing.Point(15, 238);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(242, 112);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "5. Lợi nhuận trước thuế \r\n\r\n\r\n\r\n";
             // 
-            // txtDTT
+            // label6
             // 
-            this.txtDTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtDTT.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtDTT.Location = new System.Drawing.Point(424, 125);
-            this.txtDTT.Name = "txtDTT";
-            this.txtDTT.Size = new System.Drawing.Size(263, 30);
-            this.txtDTT.TabIndex = 22;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Chocolate;
+            this.label6.Location = new System.Drawing.Point(15, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(213, 84);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "4. Chi phí nhập hàng \r\n\r\n\r\n";
             // 
-            // txtCPNH
+            // label5
             // 
-            this.txtCPNH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtCPNH.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtCPNH.Location = new System.Drawing.Point(424, 177);
-            this.txtCPNH.Name = "txtCPNH";
-            this.txtCPNH.Size = new System.Drawing.Size(263, 30);
-            this.txtCPNH.TabIndex = 23;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Chocolate;
+            this.label5.Location = new System.Drawing.Point(15, 123);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(318, 84);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "3. Doanh thu thuần về bán hàng\r\n\r\n\r\n";
             // 
-            // txtLNTT
+            // label4
             // 
-            this.txtLNTT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtLNTT.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtLNTT.Location = new System.Drawing.Point(424, 234);
-            this.txtLNTT.Name = "txtLNTT";
-            this.txtLNTT.Size = new System.Drawing.Size(263, 30);
-            this.txtLNTT.TabIndex = 24;
-            // 
-            // txtThue
-            // 
-            this.txtThue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtThue.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtThue.Location = new System.Drawing.Point(424, 293);
-            this.txtThue.Name = "txtThue";
-            this.txtThue.Size = new System.Drawing.Size(263, 30);
-            this.txtThue.TabIndex = 25;
-            // 
-            // txtLNST
-            // 
-            this.txtLNST.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtLNST.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtLNST.Location = new System.Drawing.Point(424, 348);
-            this.txtLNST.Name = "txtLNST";
-            this.txtLNST.Size = new System.Drawing.Size(263, 30);
-            this.txtLNST.TabIndex = 26;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
+            this.label4.Location = new System.Drawing.Point(15, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(323, 84);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "2. Các khoản giảm trừ doanh thu\r\n\r\n\r\n";
             // 
             // btnLapBC
             // 
@@ -293,6 +293,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnXuatExcel);
             this.Controls.Add(this.btnLapBC);

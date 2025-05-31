@@ -21,5 +21,15 @@ namespace BTL_Nhom9
         {
 
         }
+
+        private void txtTenNXB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ucNXB_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

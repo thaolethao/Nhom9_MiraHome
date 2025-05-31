@@ -69,7 +69,7 @@ namespace BTL_Nhom9
                 SqlCommand cmd = new SqlCommand(sqlInsert, DAO.conn);
                 cmd.ExecuteNonQuery();
                 DAO.close();
-                MessageBox.Show("Đã thêm mới");
+                MessageBox.Show("Đã thêm mới loại sách");
            
             LoadDataGridView();
             Clear();
