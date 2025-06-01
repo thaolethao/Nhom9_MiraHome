@@ -14,7 +14,7 @@ namespace BTL_Nhom9
     public partial class ucTacGia : UserControl
     {
         DataTable tblTacGia;
-        private string sqlInsert;
+       
 
         public ucTacGia()
         {

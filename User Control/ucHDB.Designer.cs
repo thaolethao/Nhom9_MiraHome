@@ -60,7 +60,7 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnInHD = new System.Windows.Forms.Button();
+            this.btnXuatHD = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -418,17 +418,17 @@
             this.btnTimKiem.Text = "Tìm kiếm ";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // btnInHD
+            // btnXuatHD
             // 
-            this.btnInHD.BackColor = System.Drawing.Color.White;
-            this.btnInHD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHD.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnInHD.Location = new System.Drawing.Point(673, 848);
-            this.btnInHD.Name = "btnInHD";
-            this.btnInHD.Size = new System.Drawing.Size(105, 33);
-            this.btnInHD.TabIndex = 37;
-            this.btnInHD.Text = "In hóa đơn";
-            this.btnInHD.UseVisualStyleBackColor = false;
+            this.btnXuatHD.BackColor = System.Drawing.Color.White;
+            this.btnXuatHD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatHD.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnXuatHD.Location = new System.Drawing.Point(673, 848);
+            this.btnXuatHD.Name = "btnXuatHD";
+            this.btnXuatHD.Size = new System.Drawing.Size(105, 33);
+            this.btnXuatHD.TabIndex = 37;
+            this.btnXuatHD.Text = "Xuất hóa đơn";
+            this.btnXuatHD.UseVisualStyleBackColor = false;
             // 
             // btnHuy
             // 
@@ -473,7 +473,7 @@
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.btnInHD);
+            this.Controls.Add(this.btnXuatHD);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnLuu);
@@ -538,7 +538,7 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.Button btnInHD;
+        private System.Windows.Forms.Button btnXuatHD;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox txtTimKiem;

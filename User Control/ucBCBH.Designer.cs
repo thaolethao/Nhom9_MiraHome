@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.l = new System.Windows.Forms.Label();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dgvBCNH = new System.Windows.Forms.DataGridView();
-            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDT = new System.Windows.Forms.TextBox();
             this.bddoanhthu = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -48,6 +48,8 @@
             this.bdKH = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label5 = new System.Windows.Forms.Label();
             this.btnXuatBC = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTongSoSach = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBCNH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bddoanhthu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdKH)).BeginInit();
@@ -111,24 +113,24 @@
             this.dgvBCNH.Size = new System.Drawing.Size(933, 229);
             this.dgvBCNH.TabIndex = 15;
             // 
-            // btnThongKe
+            // btnLapBaoCao
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.White;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnThongKe.Location = new System.Drawing.Point(104, 367);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(124, 34);
-            this.btnThongKe.TabIndex = 21;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnLapBaoCao.BackColor = System.Drawing.Color.White;
+            this.btnLapBaoCao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapBaoCao.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnLapBaoCao.Location = new System.Drawing.Point(104, 796);
+            this.btnLapBaoCao.Name = "btnLapBaoCao";
+            this.btnLapBaoCao.Size = new System.Drawing.Size(124, 34);
+            this.btnLapBaoCao.TabIndex = 21;
+            this.btnLapBaoCao.Text = "Lập báo cáo ";
+            this.btnLapBaoCao.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightCoral;
-            this.label3.Location = new System.Drawing.Point(338, 369);
+            this.label3.Location = new System.Drawing.Point(99, 371);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 28);
             this.label3.TabIndex = 22;
@@ -138,25 +140,25 @@
             // 
             this.txtDT.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtDT.ForeColor = System.Drawing.Color.LightCoral;
-            this.txtDT.Location = new System.Drawing.Point(467, 371);
+            this.txtDT.Location = new System.Drawing.Point(228, 369);
             this.txtDT.Name = "txtDT";
-            this.txtDT.Size = new System.Drawing.Size(263, 30);
+            this.txtDT.Size = new System.Drawing.Size(174, 30);
             this.txtDT.TabIndex = 23;
             // 
             // bddoanhthu
             // 
             this.bddoanhthu.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.Graphics;
-            chartArea3.Name = "ChartArea1";
-            this.bddoanhthu.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.bddoanhthu.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.bddoanhthu.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.bddoanhthu.Legends.Add(legend1);
             this.bddoanhthu.Location = new System.Drawing.Point(161, 453);
             this.bddoanhthu.Name = "bddoanhthu";
             this.bddoanhthu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.bddoanhthu.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bddoanhthu.Series.Add(series1);
             this.bddoanhthu.Size = new System.Drawing.Size(300, 300);
             this.bddoanhthu.TabIndex = 24;
             this.bddoanhthu.Text = "Doanh thu bán hàng";
@@ -174,16 +176,16 @@
             // 
             // bdKH
             // 
-            chartArea4.Name = "ChartArea1";
-            this.bdKH.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.bdKH.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.bdKH.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.bdKH.Legends.Add(legend2);
             this.bdKH.Location = new System.Drawing.Point(649, 453);
             this.bdKH.Name = "bdKH";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.bdKH.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.bdKH.Series.Add(series2);
             this.bdKH.Size = new System.Drawing.Size(300, 300);
             this.bdKH.TabIndex = 26;
             this.bdKH.Text = "Khách hàng";
@@ -211,6 +213,26 @@
             this.btnXuatBC.Text = "Xuất báo cáo ";
             this.btnXuatBC.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LightCoral;
+            this.label6.Location = new System.Drawing.Point(608, 371);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(217, 28);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Tổng số sách đã bán :\r\n";
+            // 
+            // txtTongSoSach
+            // 
+            this.txtTongSoSach.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtTongSoSach.ForeColor = System.Drawing.Color.LightCoral;
+            this.txtTongSoSach.Location = new System.Drawing.Point(831, 369);
+            this.txtTongSoSach.Name = "txtTongSoSach";
+            this.txtTongSoSach.Size = new System.Drawing.Size(174, 30);
+            this.txtTongSoSach.TabIndex = 30;
+            // 
             // ucBCBH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -218,6 +240,8 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtTongSoSach);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnXuatBC);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.bdKH);
@@ -225,7 +249,7 @@
             this.Controls.Add(this.bddoanhthu);
             this.Controls.Add(this.txtDT);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnThongKe);
+            this.Controls.Add(this.btnLapBaoCao);
             this.Controls.Add(this.dgvBCNH);
             this.Controls.Add(this.dtpDenNgay);
             this.Controls.Add(this.label2);
@@ -250,7 +274,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDenNgay;
         private System.Windows.Forms.DataGridView dgvBCNH;
-        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnLapBaoCao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDT;
         private System.Windows.Forms.DataVisualization.Charting.Chart bddoanhthu;
@@ -258,5 +282,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart bdKH;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnXuatBC;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTongSoSach;
     }
 }

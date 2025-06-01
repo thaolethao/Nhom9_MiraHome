@@ -41,7 +41,6 @@
             this.txtCPNH = new System.Windows.Forms.TextBox();
             this.txtDTT = new System.Windows.Forms.TextBox();
             this.txtGTDT = new System.Windows.Forms.TextBox();
-            this.txtDTBH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnLapBC = new System.Windows.Forms.Button();
             this.btnXuatExcel = new System.Windows.Forms.Button();
+            this.txtDTBH = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(594, 123);
             this.label1.TabIndex = 8;
             this.label1.Text = "Báo Cáo Kết Quả Hoạt Động Kinh Doanh \r\n\r\n\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // l
             // 
@@ -75,7 +74,6 @@
             this.l.Size = new System.Drawing.Size(94, 56);
             this.l.TabIndex = 9;
             this.l.Text = "Từ ngày:\r\n\r\n";
-            this.l.Click += new System.EventHandler(this.l_Click);
             // 
             // dtpTuNgay
             // 
@@ -112,18 +110,17 @@
             this.label3.Size = new System.Drawing.Size(229, 28);
             this.label3.TabIndex = 13;
             this.label3.Text = "1. Doanh thu bán hàng";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtDTBH);
             this.panel1.Controls.Add(this.txtLNST);
             this.panel1.Controls.Add(this.txtThue);
             this.panel1.Controls.Add(this.txtLNTT);
             this.panel1.Controls.Add(this.txtCPNH);
             this.panel1.Controls.Add(this.txtDTT);
             this.panel1.Controls.Add(this.txtGTDT);
-            this.panel1.Controls.Add(this.txtDTBH);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -189,15 +186,6 @@
             this.txtGTDT.Name = "txtGTDT";
             this.txtGTDT.Size = new System.Drawing.Size(263, 30);
             this.txtGTDT.TabIndex = 21;
-            // 
-            // txtDTBH
-            // 
-            this.txtDTBH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtDTBH.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtDTBH.Location = new System.Drawing.Point(424, 18);
-            this.txtDTBH.Name = "txtDTBH";
-            this.txtDTBH.Size = new System.Drawing.Size(263, 30);
-            this.txtDTBH.TabIndex = 20;
             // 
             // label9
             // 
@@ -276,6 +264,7 @@
             this.btnLapBC.TabIndex = 21;
             this.btnLapBC.Text = "Lập báo cáo";
             this.btnLapBC.UseVisualStyleBackColor = false;
+            this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
             // 
             // btnXuatExcel
             // 
@@ -288,6 +277,16 @@
             this.btnXuatExcel.TabIndex = 22;
             this.btnXuatExcel.Text = "Xuất excel";
             this.btnXuatExcel.UseVisualStyleBackColor = false;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
+            // txtDTBH
+            // 
+            this.txtDTBH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDTBH.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtDTBH.Location = new System.Drawing.Point(424, 18);
+            this.txtDTBH.Name = "txtDTBH";
+            this.txtDTBH.Size = new System.Drawing.Size(263, 30);
+            this.txtDTBH.TabIndex = 27;
             // 
             // ucBCKQHDKD
             // 
@@ -334,8 +333,8 @@
         private System.Windows.Forms.TextBox txtCPNH;
         private System.Windows.Forms.TextBox txtDTT;
         private System.Windows.Forms.TextBox txtGTDT;
-        private System.Windows.Forms.TextBox txtDTBH;
         private System.Windows.Forms.Button btnLapBC;
         private System.Windows.Forms.Button btnXuatExcel;
+        private System.Windows.Forms.TextBox txtDTBH;
     }
 }

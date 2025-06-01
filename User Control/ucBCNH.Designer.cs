@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.l = new System.Windows.Forms.Label();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
@@ -44,10 +44,12 @@
             this.txtTTNH = new System.Windows.Forms.TextBox();
             this.bdchiphinhap = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bdNCC = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnXuatBC = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTongSoSach = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBCNH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdchiphinhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdNCC)).BeginInit();
@@ -106,7 +108,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightCoral;
-            this.label3.Location = new System.Drawing.Point(260, 351);
+            this.label3.Location = new System.Drawing.Point(50, 351);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(214, 56);
             this.label3.TabIndex = 12;
@@ -127,56 +129,57 @@
             // 
             this.txtTTNH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtTTNH.ForeColor = System.Drawing.Color.LightCoral;
-            this.txtTTNH.Location = new System.Drawing.Point(489, 353);
+            this.txtTTNH.Location = new System.Drawing.Point(270, 353);
             this.txtTTNH.Name = "txtTTNH";
-            this.txtTTNH.Size = new System.Drawing.Size(263, 30);
+            this.txtTTNH.Size = new System.Drawing.Size(172, 30);
             this.txtTTNH.TabIndex = 17;
             // 
             // bdchiphinhap
             // 
             this.bdchiphinhap.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.Graphics;
-            chartArea1.Name = "ChartArea1";
-            this.bdchiphinhap.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.bdchiphinhap.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.bdchiphinhap.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.bdchiphinhap.Legends.Add(legend5);
             this.bdchiphinhap.Location = new System.Drawing.Point(107, 410);
             this.bdchiphinhap.Name = "bdchiphinhap";
             this.bdchiphinhap.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.bdchiphinhap.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.bdchiphinhap.Series.Add(series5);
             this.bdchiphinhap.Size = new System.Drawing.Size(300, 300);
             this.bdchiphinhap.TabIndex = 18;
             this.bdchiphinhap.Text = "Chi phí nhập hàng ";
             // 
             // bdNCC
             // 
-            chartArea2.Name = "ChartArea1";
-            this.bdNCC.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.bdNCC.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.bdNCC.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.bdNCC.Legends.Add(legend6);
             this.bdNCC.Location = new System.Drawing.Point(666, 410);
             this.bdNCC.Name = "bdNCC";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.bdNCC.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.bdNCC.Series.Add(series6);
             this.bdNCC.Size = new System.Drawing.Size(300, 300);
             this.bdNCC.TabIndex = 19;
             this.bdNCC.Text = "Nhà Cung Cấp";
             // 
-            // btnThongKe
+            // btnLapBaoCao
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.White;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.LightCoral;
-            this.btnThongKe.Location = new System.Drawing.Point(55, 350);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(124, 34);
-            this.btnThongKe.TabIndex = 20;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnLapBaoCao.BackColor = System.Drawing.Color.White;
+            this.btnLapBaoCao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapBaoCao.ForeColor = System.Drawing.Color.LightCoral;
+            this.btnLapBaoCao.Location = new System.Drawing.Point(55, 753);
+            this.btnLapBaoCao.Name = "btnLapBaoCao";
+            this.btnLapBaoCao.Size = new System.Drawing.Size(124, 34);
+            this.btnLapBaoCao.TabIndex = 20;
+            this.btnLapBaoCao.Text = "Lập báo cáo";
+            this.btnLapBaoCao.UseVisualStyleBackColor = false;
+            this.btnLapBaoCao.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // label4
             // 
@@ -211,6 +214,27 @@
             this.btnXuatBC.TabIndex = 23;
             this.btnXuatBC.Text = "Xuất báo cáo ";
             this.btnXuatBC.UseVisualStyleBackColor = false;
+            this.btnXuatBC.Click += new System.EventHandler(this.btnXuatBC_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LightCoral;
+            this.label6.Location = new System.Drawing.Point(496, 353);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(223, 28);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Tổng số sách đã nhập:\r\n";
+            // 
+            // txtTongSoSach
+            // 
+            this.txtTongSoSach.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtTongSoSach.ForeColor = System.Drawing.Color.LightCoral;
+            this.txtTongSoSach.Location = new System.Drawing.Point(725, 351);
+            this.txtTongSoSach.Name = "txtTongSoSach";
+            this.txtTongSoSach.Size = new System.Drawing.Size(172, 30);
+            this.txtTongSoSach.TabIndex = 25;
             // 
             // ucBCNH
             // 
@@ -219,10 +243,12 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtTongSoSach);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnXuatBC);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnThongKe);
+            this.Controls.Add(this.btnLapBaoCao);
             this.Controls.Add(this.bdNCC);
             this.Controls.Add(this.bdchiphinhap);
             this.Controls.Add(this.txtTTNH);
@@ -235,6 +261,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ucBCNH";
             this.Size = new System.Drawing.Size(1111, 818);
+            this.Load += new System.EventHandler(this.ucBCNH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBCNH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdchiphinhap)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdNCC)).EndInit();
@@ -255,9 +282,11 @@
         private System.Windows.Forms.TextBox txtTTNH;
         private System.Windows.Forms.DataVisualization.Charting.Chart bdchiphinhap;
         private System.Windows.Forms.DataVisualization.Charting.Chart bdNCC;
-        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnLapBaoCao;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnXuatBC;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtTongSoSach;
     }
 }

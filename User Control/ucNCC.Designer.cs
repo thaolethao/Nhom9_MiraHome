@@ -237,12 +237,11 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.txtTimKiem.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.txtTimKiem.Location = new System.Drawing.Point(0, 0);
+            this.txtTimKiem.Location = new System.Drawing.Point(549, 59);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(1001, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(238, 30);
             this.txtTimKiem.TabIndex = 30;
             // 
             // ucNCC

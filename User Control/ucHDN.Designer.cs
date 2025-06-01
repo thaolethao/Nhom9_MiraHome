@@ -62,7 +62,7 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnInHD = new System.Windows.Forms.Button();
+            this.btnXuatHD = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHDN)).BeginInit();
@@ -79,7 +79,6 @@
             this.label1.Size = new System.Drawing.Size(348, 41);
             this.label1.TabIndex = 6;
             this.label1.Text = "Quản Lý Hóa Đơn Nhập\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // l
             // 
@@ -315,7 +314,6 @@
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(374, 30);
             this.txtTenSach.TabIndex = 23;
-            this.txtTenSach.TextChanged += new System.EventHandler(this.txtTenSach_TextChanged);
             // 
             // cbbMaSach
             // 
@@ -445,17 +443,17 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             // 
-            // btnInHD
+            // btnXuatHD
             // 
-            this.btnInHD.BackColor = System.Drawing.Color.White;
-            this.btnInHD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHD.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.btnInHD.Location = new System.Drawing.Point(613, 864);
-            this.btnInHD.Name = "btnInHD";
-            this.btnInHD.Size = new System.Drawing.Size(105, 33);
-            this.btnInHD.TabIndex = 35;
-            this.btnInHD.Text = "In hóa đơn";
-            this.btnInHD.UseVisualStyleBackColor = false;
+            this.btnXuatHD.BackColor = System.Drawing.Color.White;
+            this.btnXuatHD.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatHD.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.btnXuatHD.Location = new System.Drawing.Point(613, 864);
+            this.btnXuatHD.Name = "btnXuatHD";
+            this.btnXuatHD.Size = new System.Drawing.Size(128, 33);
+            this.btnXuatHD.TabIndex = 35;
+            this.btnXuatHD.Text = "Xuất hóa đơn";
+            this.btnXuatHD.UseVisualStyleBackColor = false;
             // 
             // txtTimKiem
             // 
@@ -474,7 +472,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.btnInHD);
+            this.Controls.Add(this.btnXuatHD);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnTimKiem);
@@ -498,7 +496,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ucHDN";
             this.Size = new System.Drawing.Size(1127, 915);
-            this.Load += new System.EventHandler(this.ucHDN_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHDN)).EndInit();
@@ -544,7 +541,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnInHD;
+        private System.Windows.Forms.Button btnXuatHD;
         private System.Windows.Forms.TextBox txtTimKiem;
     }
 }
