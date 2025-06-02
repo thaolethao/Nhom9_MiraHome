@@ -56,6 +56,19 @@ namespace BTL_Nhom9
             double tongTien = dt.AsEnumerable().Sum(row => Convert.ToDouble(row["TongTien"]));
             txtTTNH.Text = tongTien.ToString("N0") + " VNĐ";
             DAO.close();
+
+            // 👉 Tính tổng số sách nhập (từ bảng chi tiết)
+            string sqlTongSach = $@"SELECT SUM(SLNhap) 
+                            FROM tblChiTietHDN ct
+                            JOIN tblHoaDonNhap hdn ON ct.SoHDN = hdn.SoHDN
+                            WHERE hdn.NgayNhap BETWEEN '{tuNgay:yyyy-MM-dd}' AND '{denNgay:yyyy-MM-dd}'";
+            object result = DAO.GetFieldValues(sqlTongSach);
+            int tongSoSach = 0;
+            if (result != DBNull.Value)
+            {
+                tongSoSach = Convert.ToInt32(result);
+            }
+            txtTongSoSach.Text = tongSoSach.ToString("N0") + " quyển";
         }
 
         private void VeBieuDoTongTienNhap(DateTime tuNgay, DateTime denNgay)
@@ -107,7 +120,11 @@ namespace BTL_Nhom9
         private string SaveChartToImage(Chart chart, string fileName)
         {
             string path = Path.Combine(Path.GetTempPath(), fileName);
-            chart.SaveImage(path, ChartImageFormat.Png);
+            using (Bitmap bmp = new Bitmap(chart.Width * 2, chart.Height * 2))
+            {
+                chart.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                bmp.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+            }
             return path;
         }
         private void btnXuatBC_Click(object sender, EventArgs e)
@@ -129,7 +146,7 @@ namespace BTL_Nhom9
             Excel._Worksheet worksheet = workbook.Sheets[1];
             worksheet.Name = "Báo cáo nhập hàng";
 
-            // Tiêu đề
+            // Tiêu đề chính
             worksheet.Cells[1, 1] = "BÁO CÁO NHẬP HÀNG";
             Excel.Range titleRange = worksheet.Range["A1", "E1"];
             titleRange.Merge();
@@ -137,6 +154,20 @@ namespace BTL_Nhom9
             titleRange.Font.Bold = true;
             titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
+            // Thời gian thống kê
+            DateTime tuNgay = dtpTuNgay.Value.Date;
+            DateTime denNgay = dtpDenNgay.Value.Date;
+
+            worksheet.Cells[2, 1] = $"Thời gian: từ ngày {tuNgay:dd/MM/yyyy} đến ngày {denNgay:dd/MM/yyyy}";
+            Excel.Range timeRange = worksheet.Range["A2", "E2"];
+            timeRange.Merge();
+            timeRange.Font.Italic = true;
+            timeRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+
+            worksheet.Cells[3, 1] = "Ngày xuất báo cáo: " + DateTime.Now.ToString("HH:mm dd/MM/yyyy");
+            Excel.Range exportTime = worksheet.Range["A3", "E3"];
+            exportTime.Merge();
+            exportTime.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
             // Header
             for (int i = 0; i < dgvBCNH.Columns.Count; i++)
             {
@@ -152,30 +183,42 @@ namespace BTL_Nhom9
                 }
             }
 
+            int dataEndRow = dgvBCNH.Rows.Count + 4;
+
             // Tổng tiền
-            worksheet.Cells[dgvBCNH.Rows.Count + 5, 1] = "Tổng tiền:";
-            worksheet.Cells[dgvBCNH.Rows.Count + 5, 2] = txtTTNH.Text;
-            worksheet.Range[$"A{dgvBCNH.Rows.Count + 5}:B{dgvBCNH.Rows.Count + 5}"].Font.Bold = true;
+            worksheet.Cells[dataEndRow + 1, 1] = "Tổng tiền:";
+            worksheet.Cells[dataEndRow + 1, 2] = txtTTNH.Text;
+            worksheet.Range[$"A{dataEndRow + 1}:B{dataEndRow + 1}"].Font.Bold = true;
 
-            // Lưu biểu đồ thành ảnh
-            string chart1Path = SaveChartToImage(bdchiphinhap, "chart1.png");
-            string chart2Path = SaveChartToImage(bdNCC, "chart2.png");
+            // Tổng số sách nhập
+            worksheet.Cells[dataEndRow + 2, 1] = "Tổng số sách nhập:";
+            worksheet.Cells[dataEndRow + 2, 2] = txtTongSoSach.Text;
+            worksheet.Range[$"A{dataEndRow + 2}:B{dataEndRow + 2}"].Font.Bold = true;
 
-            // Thêm biểu đồ Tổng tiền theo tháng
-            Excel.Range imgPosition1 = worksheet.Cells[dgvBCNH.Rows.Count + 7, 1];
+            // Lưu biểu đồ thành ảnh rõ nét
+            string chart1Path = SaveChartToImage(bdchiphinhap, $"chart_{Guid.NewGuid()}.png");
+            string chart2Path = SaveChartToImage(bdNCC, $"chart_{Guid.NewGuid()}.png");
+
+            // Thêm tiêu đề biểu đồ + chèn ảnh
+            int chartRowStart = dataEndRow + 4;
+
+            worksheet.Cells[chartRowStart, 1] = "Biểu đồ: Tổng tiền nhập theo tháng";
+            worksheet.Range[$"A{chartRowStart}"].Font.Bold = true;
+            Excel.Range imgPos1 = worksheet.Cells[chartRowStart + 1, 1];
             worksheet.Shapes.AddPicture(chart1Path,
                 Microsoft.Office.Core.MsoTriState.msoFalse,
                 Microsoft.Office.Core.MsoTriState.msoCTrue,
-                (float)imgPosition1.Left, (float)imgPosition1.Top, 500, 300);
+                (float)imgPos1.Left, (float)imgPos1.Top, 600, 350);
 
-            // Thêm biểu đồ Top nhà cung cấp
-            Excel.Range imgPosition2 = worksheet.Cells[dgvBCNH.Rows.Count + 25, 1];
+            worksheet.Cells[chartRowStart + 19, 1] = "Biểu đồ: Top 5 nhà cung cấp";
+            worksheet.Range[$"A{chartRowStart + 19}"].Font.Bold = true;
+            Excel.Range imgPos2 = worksheet.Cells[chartRowStart + 20, 1];
             worksheet.Shapes.AddPicture(chart2Path,
                 Microsoft.Office.Core.MsoTriState.msoFalse,
                 Microsoft.Office.Core.MsoTriState.msoCTrue,
-                (float)imgPosition2.Left, (float)imgPosition2.Top, 500, 300);
+                (float)imgPos2.Left, (float)imgPos2.Top, 600, 350);
 
-            // Auto fit
+            // Auto fit cột
             worksheet.Columns.AutoFit();
 
             // Lưu file

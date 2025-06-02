@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.l = new System.Windows.Forms.Label();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
@@ -82,7 +82,7 @@
             // 
             this.dtpTuNgay.Location = new System.Drawing.Point(161, 75);
             this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(200, 22);
+            this.dtpTuNgay.Size = new System.Drawing.Size(226, 22);
             this.dtpTuNgay.TabIndex = 9;
             // 
             // label2
@@ -90,7 +90,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightCoral;
-            this.label2.Location = new System.Drawing.Point(645, 70);
+            this.label2.Location = new System.Drawing.Point(634, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 56);
             this.label2.TabIndex = 10;
@@ -98,9 +98,9 @@
             // 
             // dtpDenNgay
             // 
-            this.dtpDenNgay.Location = new System.Drawing.Point(788, 75);
+            this.dtpDenNgay.Location = new System.Drawing.Point(758, 75);
             this.dtpDenNgay.Name = "dtpDenNgay";
-            this.dtpDenNgay.Size = new System.Drawing.Size(200, 22);
+            this.dtpDenNgay.Size = new System.Drawing.Size(230, 22);
             this.dtpDenNgay.TabIndex = 11;
             // 
             // label3
@@ -137,33 +137,33 @@
             // bdchiphinhap
             // 
             this.bdchiphinhap.AntiAliasing = System.Windows.Forms.DataVisualization.Charting.AntiAliasingStyles.Graphics;
-            chartArea5.Name = "ChartArea1";
-            this.bdchiphinhap.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.bdchiphinhap.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.bdchiphinhap.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.bdchiphinhap.Legends.Add(legend1);
             this.bdchiphinhap.Location = new System.Drawing.Point(107, 410);
             this.bdchiphinhap.Name = "bdchiphinhap";
             this.bdchiphinhap.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.bdchiphinhap.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bdchiphinhap.Series.Add(series1);
             this.bdchiphinhap.Size = new System.Drawing.Size(300, 300);
             this.bdchiphinhap.TabIndex = 18;
             this.bdchiphinhap.Text = "Chi phí nhập hàng ";
             // 
             // bdNCC
             // 
-            chartArea6.Name = "ChartArea1";
-            this.bdNCC.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.bdNCC.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.bdNCC.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.bdNCC.Legends.Add(legend2);
             this.bdNCC.Location = new System.Drawing.Point(666, 410);
             this.bdNCC.Name = "bdNCC";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.bdNCC.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.bdNCC.Series.Add(series2);
             this.bdNCC.Size = new System.Drawing.Size(300, 300);
             this.bdNCC.TabIndex = 19;
             this.bdNCC.Text = "Nhà Cung Cấp";
