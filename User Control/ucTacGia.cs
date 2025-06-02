@@ -217,14 +217,14 @@ namespace BTL_Nhom9
         {
             string searchValue = txtTimKiem.Text.Trim();
 
-            // Nếu ô tìm kiếm rỗng thì load lại toàn bộ dữ liệu
             if (string.IsNullOrEmpty(searchValue))
             {
-                LoadDataGridView(); // Load lại dữ liệu gốc
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Cảnh báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTimKiem.Focus(); 
                 return;
             }
 
-            // Tìm kiếm tối ưu với tham số hóa để tránh SQL Injection
             string query = @"SELECT * FROM tblTacGia 
                     WHERE TenTG LIKE @searchValue 
                     OR MaTG LIKE @searchValue 
@@ -242,7 +242,6 @@ namespace BTL_Nhom9
 
                 dgvTacGia.DataSource = dt;
 
-                // Thông báo nếu không tìm thấy
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("Không tìm thấy tác giả phù hợp", "Thông báo",
@@ -259,12 +258,11 @@ namespace BTL_Nhom9
             }
         }
 
-        // Thêm sự kiện TextChanged để tự động reset khi xóa nội dung
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
             {
-                LoadDataGridView(); // Tự động load lại dữ liệu gốc khi xóa nội dung tìm kiếm
+                LoadDataGridView(); 
             }
         }
 

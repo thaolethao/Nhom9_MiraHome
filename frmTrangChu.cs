@@ -19,17 +19,19 @@ namespace BTL_Nhom9
 
         private void LoadUserControl(UserControl uc)
         {
-            tlpnlMain.Controls.Clear();        // Xóa control cũ (nếu có)
-            tlpnlMain.Controls.Add(uc,1,1);        // Thêm UserControl vào panel
+            tlpnlMain.Controls.Clear();
+            tlpnlMain.Controls.Add(uc, 1, 1);
         }
 
         private void btnSach_Click(object sender, EventArgs e)
         {
+            
             LoadUserControl(new ucSach());
         }
 
         private void btnLoaiSach_Click(object sender, EventArgs e)
         {
+            
             LoadUserControl(new ucLoaiSach());
         }
 
@@ -40,11 +42,13 @@ namespace BTL_Nhom9
 
         private void btnNXB_Click(object sender, EventArgs e)
         {
+           
             LoadUserControl(new ucNXB());
         }
 
         private void btnNCC_Click(object sender, EventArgs e)
         {
+            
             LoadUserControl(new ucNCC());
         }
 
@@ -65,6 +69,7 @@ namespace BTL_Nhom9
 
         private void btnMatSach_Click(object sender, EventArgs e)
         {
+            
             LoadUserControl(new ucMatSach());
         }
 
@@ -97,5 +102,7 @@ namespace BTL_Nhom9
         {
             LoadUserControl(new ucBCBH());
         }
+
+       
     }
 }

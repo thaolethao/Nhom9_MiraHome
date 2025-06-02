@@ -137,6 +137,60 @@ namespace BTL_Nhom9
             btnHuy.Enabled = false;
         }
 
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string searchValue = txtTimKiem.Text.Trim();
+
+            // Nếu ô tìm kiếm rỗng thì hiển thị cảnh báo
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Cảnh báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTimKiem.Focus(); // Đưa con trỏ về ô tìm kiếm
+                return;
+            }
+
+            string query = @"SELECT * FROM tblLoaiSach 
+                     WHERE TenLoai LIKE @searchValue 
+                     OR MaLoai LIKE @searchValue";
+
+            try
+            {
+                DAO.connect();
+                SqlCommand cmd = new SqlCommand(query, DAO.conn);
+                cmd.Parameters.AddWithValue("@searchValue", $"%{searchValue}%");
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                dgvLoaiSach.DataSource = dt;
+
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy loại sách phù hợp.", "Thông báo",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tìm kiếm: " + ex.Message);
+            }
+            finally
+            {
+                DAO.close();
+            }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+        
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text))
+            {
+                LoadDataGridView();
+            }
+        
+        }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Dispose();

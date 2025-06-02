@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.l = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpTuNgay = new System.Windows.Forms.DateTimePicker();
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.dgvBCSP = new System.Windows.Forms.DataGridView();
-            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
             this.btnXuatBC = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label2.Location = new System.Drawing.Point(624, 71);
+            this.label2.Location = new System.Drawing.Point(589, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 56);
             this.label2.TabIndex = 12;
@@ -82,14 +82,14 @@
             // 
             this.dtpTuNgay.Location = new System.Drawing.Point(176, 76);
             this.dtpTuNgay.Name = "dtpTuNgay";
-            this.dtpTuNgay.Size = new System.Drawing.Size(200, 22);
+            this.dtpTuNgay.Size = new System.Drawing.Size(225, 22);
             this.dtpTuNgay.TabIndex = 13;
             // 
             // dtpDenNgay
             // 
-            this.dtpDenNgay.Location = new System.Drawing.Point(737, 76);
+            this.dtpDenNgay.Location = new System.Drawing.Point(714, 76);
             this.dtpDenNgay.Name = "dtpDenNgay";
-            this.dtpDenNgay.Size = new System.Drawing.Size(200, 22);
+            this.dtpDenNgay.Size = new System.Drawing.Size(223, 22);
             this.dtpDenNgay.TabIndex = 14;
             // 
             // dgvBCSP
@@ -103,30 +103,30 @@
             this.dgvBCSP.Size = new System.Drawing.Size(856, 229);
             this.dgvBCSP.TabIndex = 16;
             // 
-            // btnThongKe
+            // btnLapBaoCao
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.White;
-            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnThongKe.Location = new System.Drawing.Point(81, 723);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(124, 34);
-            this.btnThongKe.TabIndex = 22;
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnLapBaoCao.BackColor = System.Drawing.Color.White;
+            this.btnLapBaoCao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapBaoCao.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnLapBaoCao.Location = new System.Drawing.Point(629, 723);
+            this.btnLapBaoCao.Name = "btnLapBaoCao";
+            this.btnLapBaoCao.Size = new System.Drawing.Size(124, 34);
+            this.btnLapBaoCao.TabIndex = 22;
+            this.btnLapBaoCao.Text = "Lập báo cáo";
+            this.btnLapBaoCao.UseVisualStyleBackColor = false;
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(356, 392);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(300, 300);
             this.chart1.TabIndex = 23;
             this.chart1.Text = "chart1";
@@ -164,7 +164,7 @@
             this.Controls.Add(this.btnXuatBC);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.btnThongKe);
+            this.Controls.Add(this.btnLapBaoCao);
             this.Controls.Add(this.dgvBCSP);
             this.Controls.Add(this.dtpDenNgay);
             this.Controls.Add(this.dtpTuNgay);
@@ -188,7 +188,7 @@
         private System.Windows.Forms.DateTimePicker dtpTuNgay;
         private System.Windows.Forms.DateTimePicker dtpDenNgay;
         private System.Windows.Forms.DataGridView dgvBCSP;
-        private System.Windows.Forms.Button btnThongKe;
+        private System.Windows.Forms.Button btnLapBaoCao;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnXuatBC;

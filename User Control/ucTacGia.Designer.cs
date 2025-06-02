@@ -247,6 +247,7 @@
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.AutoSize = true;
             this.btnTimKiem.BackColor = System.Drawing.Color.White;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.DarkSalmon;
@@ -282,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.dtpNamSinh);
             this.Controls.Add(this.txtTimKiem);

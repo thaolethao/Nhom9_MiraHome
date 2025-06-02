@@ -443,7 +443,6 @@
             // 
             // tlpnlMain
             // 
-            this.tlpnlMain.AutoScroll = true;
             this.tlpnlMain.AutoSize = true;
             this.tlpnlMain.ColumnCount = 3;
             this.tlpnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));

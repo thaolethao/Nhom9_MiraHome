@@ -35,6 +35,7 @@
             this.dtpDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDTBH = new System.Windows.Forms.TextBox();
             this.txtLNST = new System.Windows.Forms.TextBox();
             this.txtThue = new System.Windows.Forms.TextBox();
             this.txtLNTT = new System.Windows.Forms.TextBox();
@@ -48,8 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLapBC = new System.Windows.Forms.Button();
-            this.btnXuatExcel = new System.Windows.Forms.Button();
-            this.txtDTBH = new System.Windows.Forms.TextBox();
+            this.btnXuatBaoCao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(910, 392);
             this.panel1.TabIndex = 14;
+            // 
+            // txtDTBH
+            // 
+            this.txtDTBH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.txtDTBH.ForeColor = System.Drawing.Color.Chocolate;
+            this.txtDTBH.Location = new System.Drawing.Point(424, 18);
+            this.txtDTBH.Name = "txtDTBH";
+            this.txtDTBH.Size = new System.Drawing.Size(263, 30);
+            this.txtDTBH.TabIndex = 27;
             // 
             // txtLNST
             // 
@@ -258,7 +267,7 @@
             this.btnLapBC.BackColor = System.Drawing.Color.White;
             this.btnLapBC.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLapBC.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnLapBC.Location = new System.Drawing.Point(80, 568);
+            this.btnLapBC.Location = new System.Drawing.Point(708, 568);
             this.btnLapBC.Name = "btnLapBC";
             this.btnLapBC.Size = new System.Drawing.Size(124, 34);
             this.btnLapBC.TabIndex = 21;
@@ -266,27 +275,18 @@
             this.btnLapBC.UseVisualStyleBackColor = false;
             this.btnLapBC.Click += new System.EventHandler(this.btnLapBC_Click);
             // 
-            // btnXuatExcel
+            // btnXuatBaoCao
             // 
-            this.btnXuatExcel.BackColor = System.Drawing.Color.White;
-            this.btnXuatExcel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatExcel.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnXuatExcel.Location = new System.Drawing.Point(245, 568);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(124, 34);
-            this.btnXuatExcel.TabIndex = 22;
-            this.btnXuatExcel.Text = "Xuất excel";
-            this.btnXuatExcel.UseVisualStyleBackColor = false;
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
-            // 
-            // txtDTBH
-            // 
-            this.txtDTBH.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.txtDTBH.ForeColor = System.Drawing.Color.Chocolate;
-            this.txtDTBH.Location = new System.Drawing.Point(424, 18);
-            this.txtDTBH.Name = "txtDTBH";
-            this.txtDTBH.Size = new System.Drawing.Size(263, 30);
-            this.txtDTBH.TabIndex = 27;
+            this.btnXuatBaoCao.BackColor = System.Drawing.Color.White;
+            this.btnXuatBaoCao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatBaoCao.ForeColor = System.Drawing.Color.Chocolate;
+            this.btnXuatBaoCao.Location = new System.Drawing.Point(866, 568);
+            this.btnXuatBaoCao.Name = "btnXuatBaoCao";
+            this.btnXuatBaoCao.Size = new System.Drawing.Size(124, 34);
+            this.btnXuatBaoCao.TabIndex = 22;
+            this.btnXuatBaoCao.Text = "Xuất báo cáo";
+            this.btnXuatBaoCao.UseVisualStyleBackColor = false;
+            this.btnXuatBaoCao.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // ucBCKQHDKD
             // 
@@ -295,7 +295,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnXuatExcel);
+            this.Controls.Add(this.btnXuatBaoCao);
             this.Controls.Add(this.btnLapBC);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtpDenNgay);
@@ -334,7 +334,7 @@
         private System.Windows.Forms.TextBox txtDTT;
         private System.Windows.Forms.TextBox txtGTDT;
         private System.Windows.Forms.Button btnLapBC;
-        private System.Windows.Forms.Button btnXuatExcel;
+        private System.Windows.Forms.Button btnXuatBaoCao;
         private System.Windows.Forms.TextBox txtDTBH;
     }
 }
