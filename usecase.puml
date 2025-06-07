@@ -1,0 +1,145 @@
+@startuml erd
+entity attributes {
+  * id : BIGINT <<PK>>
+  --
+  attribute_name : NVARCHAR(255)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity banners {
+  * id : BIGINT <<PK>>
+  --
+  title : NVARCHAR(255)
+  description : NVARCHAR(MAX)
+  image : NVARCHAR(255)
+  status : INT
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity cache {
+  * key : NVARCHAR(255) <<PK>>
+  --
+  value : NVARCHAR(MAX)
+  expiration : INT
+}
+
+entity cache_locks {
+  * key : NVARCHAR(255) <<PK>>
+  --
+  owner : NVARCHAR(255)
+  expiration : INT
+}
+
+entity carts {
+  * id : BIGINT <<PK>>
+  --
+  user_id : BIGINT
+  status : NVARCHAR(255)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity users {
+  * id : BIGINT <<PK>>
+  --
+  name : NVARCHAR(255)
+  email : NVARCHAR(255)
+  usertype : NVARCHAR(255)
+  status : INT
+  phone : NVARCHAR(255)
+  image : NVARCHAR(255)
+  email_verified_at : DATETIME
+  password : NVARCHAR(255)
+  remember_token : NVARCHAR(100)
+  google_id : NVARCHAR(255)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity cart_items {
+  * id : BIGINT <<PK>>
+  --
+  cart_id : BIGINT
+  product_id : BIGINT
+  variant_id : BIGINT
+  quantity : INT
+  price : DECIMAL(10,2)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity products {
+  * id : BIGINT <<PK>>
+  --
+  name : NVARCHAR(255)
+  short_description : NVARCHAR(MAX)
+  long_description : NVARCHAR(MAX)
+  specifications : NVARCHAR(MAX)
+  is_hot : BIT
+  is_most_viewed : INT
+  status : NVARCHAR(255)
+  has_variants : BIT
+  base_price : DECIMAL(10,2)
+  image_url : NVARCHAR(255)
+  sub_images_urls : NVARCHAR(MAX)
+  store_quantity : INT
+  category_id : BIGINT
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity product_variants {
+  * id : BIGINT <<PK>>
+  --
+  product_id : BIGINT
+  variant_name : NVARCHAR(255)
+  price : DECIMAL(10,2)
+  image : NVARCHAR(255)
+  stock : INT
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity attributes {
+  * id : BIGINT <<PK>>
+  --
+  attribute_name : NVARCHAR(255)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity variant_attributes {
+  * id : BIGINT <<PK>>
+  --
+  variant_id : BIGINT
+  attribute_id : BIGINT
+  attribute_value : NVARCHAR(255)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity vouchers {
+  * id : BIGINT <<PK>>
+  --
+  code : NVARCHAR(255)
+  start_date : DATE
+  end_date : DATE
+  quantity : INT
+  used : INT
+  discount_percentage : DECIMAL(5,2)
+  max_discount_amount : DECIMAL(15,2)
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+carts::user_id --> users::id
+cart_items::cart_id --> carts::id
+cart_items::product_id --> products::id
+cart_items::variant_id --> product_variants::id
+products::category_id --> product_categories::id
+product_variants::product_id --> products::id
+variant_attributes::variant_id --> product_variants::id
+variant_attributes::attribute_id --> attributes::id
+@enduml
